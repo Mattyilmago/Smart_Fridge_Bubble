@@ -1,0 +1,4 @@
+[2026-02-02 21:45:37] [SmartFridge.camera] [WARNING] Capture failed (attempt 1): Failed to capture frame
+[2026-02-02 21:45:37] [SmartFridge.camera] [WARNING] Capture failed (attempt 2): Cannot open /dev/video8
+[2026-02-02 21:45:37] [SmartFridge.camera] [WARNING] Capture failed (attempt 3): Cannot open /dev/video8
+[2026-02-02 21:45:37] [SmartFridge.camera] [ERROR] CameraCaptureError: Failed to capture from /dev/video8 after 3 attempts

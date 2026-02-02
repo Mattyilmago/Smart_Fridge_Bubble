@@ -1,6 +1,31 @@
+# === CORE DEPENDENCIES ===
+# Qt per UI
 PyQt6
-# PyQt6-WebEngine  # Commentato: causa crash su Raspberry Pi, usare solo se necessario
 PyQt6-Charts
+# PyQt6-WebEngine  # Commentato: causa crash su Raspberry Pi, usare solo se necessario
+
+# Requests per API calls
 requests
+
+# === SENSOR DEPENDENCIES ===
+# Adafruit per sensore BMP280 (temperatura)
 adafruit-circuitpython-bmp280
+
+# RPi.GPIO per reed switch
 RPi.GPIO
+
+# === CAMERA DEPENDENCIES ===
+# OpenCV per gestione webcam USB (GoPro)
+opencv-python
+
+# === YOLO DEPENDENCIES ===
+# Ultralytics YOLOv8
+ultralytics
+
+# === UTILITY DEPENDENCIES ===
+# Pillow per elaborazione immagini (richiesto da YOLO)
+Pillow
+
+# === DATABASE DEPENDENCIES ===
+# MySQL connector (pure Python, no compilation needed)
+mysql-connector-python
