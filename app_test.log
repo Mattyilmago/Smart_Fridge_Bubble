@@ -1,0 +1,636 @@
+============================================================
+Smart Fridge Monitor - Starting...
+============================================================
+[DataManager-temperature] Initialized
+[DataManager-power] Initialized
+[MainWindow] Initializing sensors...
+[Power] Initializing power meter...
+[Power] Power meter initialized successfully
+[MainWindow] All sensors initialized successfully
+[MainWindow] Loading historical data...
+[DataManager-temperature] API disabled, skipping history load
+[DataManager-power] API disabled, skipping history load
+[MainWindow] Polling timer started (interval: 1000ms)
+[MainWindow] Initialization complete
+This plugin does not support propagateSizeHints()
+[App] Application started successfully
+[App] Press Ctrl+C in terminal or close window to exit
+This plugin does not support propagateSizeHints()
+[TemperatureSensor] Read: 35.23°C
+[ChartWidget-Temperature] Updated with 1 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 1 points, current: 94.2W
+[TemperatureSensor] Read: 35.25°C
+[ChartWidget-Temperature] Updated with 2 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 2 points, current: 92.6W
+[TemperatureSensor] Read: 35.24°C
+[ChartWidget-Temperature] Updated with 3 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 3 points, current: 89.2W
+[TemperatureSensor] Read: 35.25°C
+[ChartWidget-Temperature] Updated with 4 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 4 points, current: 83.1W
+[TemperatureSensor] Read: 35.24°C
+[ChartWidget-Temperature] Updated with 5 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 5 points, current: 82.7W
+[TemperatureSensor] Read: 35.25°C
+[ChartWidget-Temperature] Updated with 6 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 6 points, current: 76.7W
+[TemperatureSensor] Read: 35.26°C
+[ChartWidget-Temperature] Updated with 7 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 7 points, current: 71.7W
+[TemperatureSensor] Read: 35.25°C
+[ChartWidget-Temperature] Updated with 8 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 8 points, current: 68.1W
+[TemperatureSensor] Read: 35.24°C
+[ChartWidget-Temperature] Updated with 9 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 9 points, current: 66.8W
+[TemperatureSensor] Read: 35.27°C
+[ChartWidget-Temperature] Updated with 10 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 10 points, current: 64.0W
+[TemperatureSensor] Read: 35.27°C
+[ChartWidget-Temperature] Updated with 11 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 11 points, current: 64.4W
+[TemperatureSensor] Read: 35.26°C
+[ChartWidget-Temperature] Updated with 12 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 12 points, current: 67.4W
+[TemperatureSensor] Read: 35.27°C
+[ChartWidget-Temperature] Updated with 13 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 13 points, current: 62.0W
+[TemperatureSensor] Read: 35.26°C
+[ChartWidget-Temperature] Updated with 14 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 14 points, current: 59.9W
+[TemperatureSensor] Read: 35.28°C
+[ChartWidget-Temperature] Updated with 15 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 15 points, current: 60.4W
+[TemperatureSensor] Read: 35.28°C
+[ChartWidget-Temperature] Updated with 16 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 16 points, current: 65.3W
+[TemperatureSensor] Read: 35.28°C
+[ChartWidget-Temperature] Updated with 17 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 17 points, current: 64.9W
+[TemperatureSensor] Read: 35.28°C
+[ChartWidget-Temperature] Updated with 18 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 18 points, current: 61.4W
+[TemperatureSensor] Read: 35.29°C
+[ChartWidget-Temperature] Updated with 19 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 19 points, current: 66.2W
+[TemperatureSensor] Read: 35.28°C
+[ChartWidget-Temperature] Updated with 20 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 20 points, current: 61.5W
+[TemperatureSensor] Read: 35.29°C
+[ChartWidget-Temperature] Updated with 21 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 21 points, current: 62.6W
+[TemperatureSensor] Read: 35.29°C
+[ChartWidget-Temperature] Updated with 22 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 22 points, current: 66.8W
+[TemperatureSensor] Read: 35.29°C
+[ChartWidget-Temperature] Updated with 23 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 23 points, current: 63.8W
+[TemperatureSensor] Read: 35.29°C
+[ChartWidget-Temperature] Updated with 24 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 24 points, current: 59.5W
+[TemperatureSensor] Read: 35.30°C
+[ChartWidget-Temperature] Updated with 25 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 25 points, current: 59.1W
+[TemperatureSensor] Read: 35.30°C
+[ChartWidget-Temperature] Updated with 26 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 26 points, current: 55.1W
+[TemperatureSensor] Read: 35.30°C
+[ChartWidget-Temperature] Updated with 27 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 27 points, current: 54.2W
+[TemperatureSensor] Read: 35.30°C
+[ChartWidget-Temperature] Updated with 28 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 28 points, current: 59.1W
+[TemperatureSensor] Read: 35.30°C
+[ChartWidget-Temperature] Updated with 29 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 29 points, current: 59.1W
+[TemperatureSensor] Read: 35.31°C
+[ChartWidget-Temperature] Updated with 30 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 30 points, current: 58.6W
+[TemperatureSensor] Read: 35.32°C
+[ChartWidget-Temperature] Updated with 31 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 31 points, current: 60.1W
+[TemperatureSensor] Read: 35.32°C
+[ChartWidget-Temperature] Updated with 32 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 32 points, current: 58.7W
+[TemperatureSensor] Read: 35.32°C
+[ChartWidget-Temperature] Updated with 33 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 33 points, current: 61.3W
+[TemperatureSensor] Read: 35.32°C
+[ChartWidget-Temperature] Updated with 34 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 34 points, current: 58.1W
+[TemperatureSensor] Read: 35.32°C
+[ChartWidget-Temperature] Updated with 35 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 35 points, current: 61.1W
+[TemperatureSensor] Read: 35.32°C
+[ChartWidget-Temperature] Updated with 36 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 36 points, current: 64.0W
+[TemperatureSensor] Read: 35.31°C
+[ChartWidget-Temperature] Updated with 37 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 37 points, current: 68.1W
+[TemperatureSensor] Read: 35.31°C
+[ChartWidget-Temperature] Updated with 38 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 38 points, current: 69.0W
+[TemperatureSensor] Read: 35.31°C
+[ChartWidget-Temperature] Updated with 39 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 39 points, current: 66.6W
+[TemperatureSensor] Read: 35.31°C
+[ChartWidget-Temperature] Updated with 40 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 40 points, current: 69.1W
+[TemperatureSensor] Read: 35.30°C
+[ChartWidget-Temperature] Updated with 41 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 41 points, current: 66.8W
+[TemperatureSensor] Read: 35.30°C
+[ChartWidget-Temperature] Updated with 42 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 42 points, current: 70.6W
+[TemperatureSensor] Read: 35.30°C
+[ChartWidget-Temperature] Updated with 43 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 43 points, current: 72.5W
+[TemperatureSensor] Read: 35.29°C
+[ChartWidget-Temperature] Updated with 44 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 44 points, current: 75.9W
+[TemperatureSensor] Read: 35.29°C
+[ChartWidget-Temperature] Updated with 45 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 45 points, current: 70.2W
+[TemperatureSensor] Read: 35.28°C
+[ChartWidget-Temperature] Updated with 46 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 46 points, current: 72.8W
+[TemperatureSensor] Read: 35.28°C
+[ChartWidget-Temperature] Updated with 47 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 47 points, current: 70.1W
+[TemperatureSensor] Read: 35.27°C
+[ChartWidget-Temperature] Updated with 48 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 48 points, current: 68.7W
+[TemperatureSensor] Read: 35.27°C
+[ChartWidget-Temperature] Updated with 49 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 49 points, current: 67.3W
+[TemperatureSensor] Read: 35.26°C
+[ChartWidget-Temperature] Updated with 50 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 50 points, current: 67.5W
+[TemperatureSensor] Read: 35.27°C
+[ChartWidget-Temperature] Updated with 51 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 51 points, current: 68.3W
+[TemperatureSensor] Read: 35.27°C
+[ChartWidget-Temperature] Updated with 52 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 52 points, current: 63.4W
+[TemperatureSensor] Read: 35.26°C
+[ChartWidget-Temperature] Updated with 53 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 53 points, current: 67.5W
+[TemperatureSensor] Read: 35.26°C
+[ChartWidget-Temperature] Updated with 54 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 54 points, current: 69.9W
+[TemperatureSensor] Read: 35.26°C
+[ChartWidget-Temperature] Updated with 55 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 55 points, current: 71.3W
+[TemperatureSensor] Read: 35.25°C
+[ChartWidget-Temperature] Updated with 56 points, current: 35.3°C
+[ChartWidget-Power Consumption] Updated with 56 points, current: 65.6W
+[TemperatureSensor] Read: 35.24°C
+[ChartWidget-Temperature] Updated with 57 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 57 points, current: 68.2W
+[TemperatureSensor] Read: 35.24°C
+[ChartWidget-Temperature] Updated with 58 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 58 points, current: 70.4W
+[TemperatureSensor] Read: 35.23°C
+[ChartWidget-Temperature] Updated with 59 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 59 points, current: 68.4W
+[TemperatureSensor] Read: 35.24°C
+[ChartWidget-Temperature] Updated with 60 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 60 points, current: 72.2W
+[TemperatureSensor] Read: 35.24°C
+[ChartWidget-Temperature] Updated with 61 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 61 points, current: 80.2W
+[TemperatureSensor] Read: 35.23°C
+[ChartWidget-Temperature] Updated with 62 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 62 points, current: 82.4W
+[TemperatureSensor] Read: 35.23°C
+[ChartWidget-Temperature] Updated with 63 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 63 points, current: 81.3W
+[TemperatureSensor] Read: 35.23°C
+[ChartWidget-Temperature] Updated with 64 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 64 points, current: 86.1W
+[TemperatureSensor] Read: 35.23°C
+[ChartWidget-Temperature] Updated with 65 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 65 points, current: 94.0W
+[TemperatureSensor] Read: 35.23°C
+[ChartWidget-Temperature] Updated with 66 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 66 points, current: 95.5W
+[TemperatureSensor] Read: 35.22°C
+[ChartWidget-Temperature] Updated with 67 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 67 points, current: 102.8W
+[TemperatureSensor] Read: 35.21°C
+[ChartWidget-Temperature] Updated with 68 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 68 points, current: 100.1W
+[TemperatureSensor] Read: 35.21°C
+[ChartWidget-Temperature] Updated with 69 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 69 points, current: 103.9W
+[TemperatureSensor] Read: 35.21°C
+[ChartWidget-Temperature] Updated with 70 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 70 points, current: 109.9W
+[TemperatureSensor] Read: 22.31°C
+[ChartWidget-Temperature] Updated with 71 points, current: 22.3°C
+[ChartWidget-Power Consumption] Updated with 71 points, current: 114.2W
+[TemperatureSensor] Read: 35.19°C
+[ChartWidget-Temperature] Updated with 72 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 72 points, current: 113.5W
+[TemperatureSensor] Read: 35.19°C
+[ChartWidget-Temperature] Updated with 73 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 73 points, current: 116.9W
+[TemperatureSensor] Read: 35.23°C
+[ChartWidget-Temperature] Updated with 74 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 74 points, current: 114.5W
+[TemperatureSensor] Read: 35.18°C
+[ChartWidget-Temperature] Updated with 75 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 75 points, current: 119.2W
+[TemperatureSensor] Read: 35.18°C
+[ChartWidget-Temperature] Updated with 76 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 76 points, current: 120.8W
+[TemperatureSensor] Read: 35.20°C
+[ChartWidget-Temperature] Updated with 77 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 77 points, current: 124.2W
+[TemperatureSensor] Read: 35.20°C
+[ChartWidget-Temperature] Updated with 78 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 78 points, current: 120.7W
+[TemperatureSensor] Read: 35.15°C
+[ChartWidget-Temperature] Updated with 79 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 79 points, current: 124.8W
+[TemperatureSensor] Read: 35.19°C
+[ChartWidget-Temperature] Updated with 80 points, current: 35.2°C
+[ChartWidget-Power Consumption] Updated with 80 points, current: 126.4W
+[TemperatureSensor] Read: 35.14°C
+[ChartWidget-Temperature] Updated with 81 points, current: 35.1°C
+[ChartWidget-Power Consumption] Updated with 81 points, current: 129.3W
+[TemperatureSensor] Read: 35.14°C
+[ChartWidget-Temperature] Updated with 82 points, current: 35.1°C
+[ChartWidget-Power Consumption] Updated with 82 points, current: 133.0W
+[TemperatureSensor] Read: 35.12°C
+[ChartWidget-Temperature] Updated with 83 points, current: 35.1°C
+[ChartWidget-Power Consumption] Updated with 83 points, current: 130.3W
+[TemperatureSensor] Read: 35.11°C
+[ChartWidget-Temperature] Updated with 84 points, current: 35.1°C
+[ChartWidget-Power Consumption] Updated with 84 points, current: 132.4W
+[TemperatureSensor] Read: 35.14°C
+[ChartWidget-Temperature] Updated with 85 points, current: 35.1°C
+[ChartWidget-Power Consumption] Updated with 85 points, current: 133.2W
+[TemperatureSensor] Read: 35.14°C
+[ChartWidget-Temperature] Updated with 86 points, current: 35.1°C
+[ChartWidget-Power Consumption] Updated with 86 points, current: 130.5W
+[TemperatureSensor] Read: 35.11°C
+[ChartWidget-Temperature] Updated with 87 points, current: 35.1°C
+[ChartWidget-Power Consumption] Updated with 87 points, current: 132.5W
+[TemperatureSensor] Read: 35.08°C
+[ChartWidget-Temperature] Updated with 88 points, current: 35.1°C
+[ChartWidget-Power Consumption] Updated with 88 points, current: 133.0W
+[TemperatureSensor] Read: 35.08°C
+[ChartWidget-Temperature] Updated with 89 points, current: 35.1°C
+[ChartWidget-Power Consumption] Updated with 89 points, current: 134.5W
+[TemperatureSensor] Read: 35.08°C
+[ChartWidget-Temperature] Updated with 90 points, current: 35.1°C
+[ChartWidget-Power Consumption] Updated with 90 points, current: 128.8W
+[TemperatureSensor] Read: 35.06°C
+[ChartWidget-Temperature] Updated with 91 points, current: 35.1°C
+[ChartWidget-Power Consumption] Updated with 91 points, current: 129.9W
+[TemperatureSensor] Read: 35.06°C
+[ChartWidget-Temperature] Updated with 92 points, current: 35.1°C
+[ChartWidget-Power Consumption] Updated with 92 points, current: 132.5W
+[TemperatureSensor] Read: 35.09°C
+[ChartWidget-Temperature] Updated with 93 points, current: 35.1°C
+[ChartWidget-Power Consumption] Updated with 93 points, current: 129.7W
+[TemperatureSensor] Read: 152.76°C
+[ChartWidget-Temperature] Updated with 94 points, current: 152.8°C
+[ChartWidget-Power Consumption] Updated with 94 points, current: 126.7W
+[TemperatureSensor] Read: 35.01°C
+[ChartWidget-Temperature] Updated with 95 points, current: 35.0°C
+[ChartWidget-Power Consumption] Updated with 95 points, current: 127.8W
+[TemperatureSensor] Read: 35.05°C
+[ChartWidget-Temperature] Updated with 96 points, current: 35.1°C
+[ChartWidget-Power Consumption] Updated with 96 points, current: 125.9W
+[TemperatureSensor] Read: 145.23°C
+[ChartWidget-Temperature] Updated with 97 points, current: 145.2°C
+[ChartWidget-Power Consumption] Updated with 97 points, current: 123.7W
+[TemperatureSensor] Read: 35.06°C
+[ChartWidget-Temperature] Updated with 98 points, current: 35.1°C
+[ChartWidget-Power Consumption] Updated with 98 points, current: 123.1W
+[TemperatureSensor] Read: 34.99°C
+[ChartWidget-Temperature] Updated with 99 points, current: 35.0°C
+[ChartWidget-Power Consumption] Updated with 99 points, current: 121.2W
+[TemperatureSensor] Read: 35.03°C
+[ChartWidget-Temperature] Updated with 100 points, current: 35.0°C
+[ChartWidget-Power Consumption] Updated with 100 points, current: 123.1W
+[TemperatureSensor] Read: 35.03°C
+[ChartWidget-Temperature] Updated with 101 points, current: 35.0°C
+[ChartWidget-Power Consumption] Updated with 101 points, current: 121.1W
+[TemperatureSensor] Read: 35.02°C
+[ChartWidget-Temperature] Updated with 102 points, current: 35.0°C
+[ChartWidget-Power Consumption] Updated with 102 points, current: 117.0W
+[TemperatureSensor] Read: 34.96°C
+[ChartWidget-Temperature] Updated with 103 points, current: 35.0°C
+[ChartWidget-Power Consumption] Updated with 103 points, current: 112.3W
+[TemperatureSensor] Read: 34.96°C
+[ChartWidget-Temperature] Updated with 104 points, current: 35.0°C
+[ChartWidget-Power Consumption] Updated with 104 points, current: 115.9W
+[TemperatureSensor] Read: 34.95°C
+[ChartWidget-Temperature] Updated with 105 points, current: 35.0°C
+[ChartWidget-Power Consumption] Updated with 105 points, current: 119.1W
+[TemperatureSensor] Read: 34.94°C
+[ChartWidget-Temperature] Updated with 106 points, current: 34.9°C
+[ChartWidget-Power Consumption] Updated with 106 points, current: 120.0W
+[TemperatureSensor] Read: 34.94°C
+[ChartWidget-Temperature] Updated with 107 points, current: 34.9°C
+[ChartWidget-Power Consumption] Updated with 107 points, current: 116.5W
+[TemperatureSensor] Read: 34.92°C
+[ChartWidget-Temperature] Updated with 108 points, current: 34.9°C
+[ChartWidget-Power Consumption] Updated with 108 points, current: 118.6W
+[TemperatureSensor] Read: 34.91°C
+[ChartWidget-Temperature] Updated with 109 points, current: 34.9°C
+[ChartWidget-Power Consumption] Updated with 109 points, current: 117.6W
+[TemperatureSensor] Read: 34.95°C
+[ChartWidget-Temperature] Updated with 110 points, current: 34.9°C
+[ChartWidget-Power Consumption] Updated with 110 points, current: 122.6W
+[TemperatureSensor] Read: 34.95°C
+[ChartWidget-Temperature] Updated with 111 points, current: 34.9°C
+[ChartWidget-Power Consumption] Updated with 111 points, current: 126.2W
+[TemperatureSensor] Read: 105.50°C
+[ChartWidget-Temperature] Updated with 112 points, current: 105.5°C
+[ChartWidget-Power Consumption] Updated with 112 points, current: 123.2W
+[TemperatureSensor] Read: 34.94°C
+[ChartWidget-Temperature] Updated with 113 points, current: 34.9°C
+[ChartWidget-Power Consumption] Updated with 113 points, current: 123.7W
+[TemperatureSensor] Read: 34.92°C
+[ChartWidget-Temperature] Updated with 114 points, current: 34.9°C
+[ChartWidget-Power Consumption] Updated with 114 points, current: 121.6W
+[TemperatureSensor] Read: 34.87°C
+[ChartWidget-Temperature] Updated with 115 points, current: 34.9°C
+[ChartWidget-Power Consumption] Updated with 115 points, current: 122.1W
+[TemperatureSensor] Read: 34.87°C
+[ChartWidget-Temperature] Updated with 116 points, current: 34.9°C
+[ChartWidget-Power Consumption] Updated with 116 points, current: 123.0W
+[TemperatureSensor] Read: 34.86°C
+[ChartWidget-Temperature] Updated with 117 points, current: 34.9°C
+[ChartWidget-Power Consumption] Updated with 117 points, current: 121.8W
+[TemperatureSensor] Read: 34.85°C
+[ChartWidget-Temperature] Updated with 118 points, current: 34.9°C
+[ChartWidget-Power Consumption] Updated with 118 points, current: 120.0W
+[TemperatureSensor] Read: 34.84°C
+[ChartWidget-Temperature] Updated with 119 points, current: 34.8°C
+[ChartWidget-Power Consumption] Updated with 119 points, current: 117.0W
+[TemperatureSensor] Read: 34.80°C
+[ChartWidget-Temperature] Updated with 120 points, current: 34.8°C
+[ChartWidget-Power Consumption] Updated with 120 points, current: 117.9W
+[TemperatureSensor] Read: 34.70°C
+[ChartWidget-Temperature] Updated with 121 points, current: 34.7°C
+[ChartWidget-Power Consumption] Updated with 121 points, current: 119.4W
+[TemperatureSensor] Read: 34.66°C
+[ChartWidget-Temperature] Updated with 122 points, current: 34.7°C
+[ChartWidget-Power Consumption] Updated with 122 points, current: 111.0W
+[TemperatureSensor] Read: 34.59°C
+[ChartWidget-Temperature] Updated with 123 points, current: 34.6°C
+[ChartWidget-Power Consumption] Updated with 123 points, current: 109.7W
+[TemperatureSensor] Read: 34.50°C
+[ChartWidget-Temperature] Updated with 124 points, current: 34.5°C
+[ChartWidget-Power Consumption] Updated with 124 points, current: 105.2W
+[TemperatureSensor] Read: 34.42°C
+[ChartWidget-Temperature] Updated with 125 points, current: 34.4°C
+[ChartWidget-Power Consumption] Updated with 125 points, current: 96.3W
+[TemperatureSensor] Read: 34.39°C
+[ChartWidget-Temperature] Updated with 126 points, current: 34.4°C
+[ChartWidget-Power Consumption] Updated with 126 points, current: 97.4W
+[TemperatureSensor] Read: 34.32°C
+[ChartWidget-Temperature] Updated with 127 points, current: 34.3°C
+[ChartWidget-Power Consumption] Updated with 127 points, current: 88.7W
+[TemperatureSensor] Read: 34.27°C
+[ChartWidget-Temperature] Updated with 128 points, current: 34.3°C
+[ChartWidget-Power Consumption] Updated with 128 points, current: 88.3W
+[TemperatureSensor] Read: 34.20°C
+[ChartWidget-Temperature] Updated with 129 points, current: 34.2°C
+[ChartWidget-Power Consumption] Updated with 129 points, current: 80.5W
+[TemperatureSensor] Read: 34.14°C
+[ChartWidget-Temperature] Updated with 130 points, current: 34.1°C
+[ChartWidget-Power Consumption] Updated with 130 points, current: 75.3W
+[TemperatureSensor] Read: 34.07°C
+[ChartWidget-Temperature] Updated with 131 points, current: 34.1°C
+[ChartWidget-Power Consumption] Updated with 131 points, current: 72.5W
+[TemperatureSensor] Read: 34.00°C
+[ChartWidget-Temperature] Updated with 132 points, current: 34.0°C
+[ChartWidget-Power Consumption] Updated with 132 points, current: 68.1W
+[TemperatureSensor] Read: 33.94°C
+[ChartWidget-Temperature] Updated with 133 points, current: 33.9°C
+[ChartWidget-Power Consumption] Updated with 133 points, current: 62.8W
+[TemperatureSensor] Read: 33.91°C
+[ChartWidget-Temperature] Updated with 134 points, current: 33.9°C
+[ChartWidget-Power Consumption] Updated with 134 points, current: 65.1W
+[TemperatureSensor] Read: 33.87°C
+[ChartWidget-Temperature] Updated with 135 points, current: 33.9°C
+[ChartWidget-Power Consumption] Updated with 135 points, current: 62.6W
+[TemperatureSensor] Read: 33.84°C
+[ChartWidget-Temperature] Updated with 136 points, current: 33.8°C
+[ChartWidget-Power Consumption] Updated with 136 points, current: 61.2W
+[TemperatureSensor] Read: 33.81°C
+[ChartWidget-Temperature] Updated with 137 points, current: 33.8°C
+[ChartWidget-Power Consumption] Updated with 137 points, current: 57.0W
+[TemperatureSensor] Read: 33.79°C
+[ChartWidget-Temperature] Updated with 138 points, current: 33.8°C
+[ChartWidget-Power Consumption] Updated with 138 points, current: 58.9W
+[TemperatureSensor] Read: 33.77°C
+[ChartWidget-Temperature] Updated with 139 points, current: 33.8°C
+[ChartWidget-Power Consumption] Updated with 139 points, current: 59.9W
+[TemperatureSensor] Read: 33.74°C
+[ChartWidget-Temperature] Updated with 140 points, current: 33.7°C
+[ChartWidget-Power Consumption] Updated with 140 points, current: 64.4W
+[TemperatureSensor] Read: 33.71°C
+[ChartWidget-Temperature] Updated with 141 points, current: 33.7°C
+[ChartWidget-Power Consumption] Updated with 141 points, current: 61.2W
+[TemperatureSensor] Read: 33.69°C
+[ChartWidget-Temperature] Updated with 142 points, current: 33.7°C
+[ChartWidget-Power Consumption] Updated with 142 points, current: 63.1W
+[TemperatureSensor] Read: 33.66°C
+[ChartWidget-Temperature] Updated with 143 points, current: 33.7°C
+[ChartWidget-Power Consumption] Updated with 143 points, current: 65.1W
+[TemperatureSensor] Read: 33.65°C
+[ChartWidget-Temperature] Updated with 144 points, current: 33.7°C
+[ChartWidget-Power Consumption] Updated with 144 points, current: 69.5W
+[TemperatureSensor] Read: 33.65°C
+[ChartWidget-Temperature] Updated with 145 points, current: 33.6°C
+[ChartWidget-Power Consumption] Updated with 145 points, current: 63.8W
+[TemperatureSensor] Read: 33.63°C
+[ChartWidget-Temperature] Updated with 146 points, current: 33.6°C
+[ChartWidget-Power Consumption] Updated with 146 points, current: 63.9W
+[TemperatureSensor] Read: 33.62°C
+[ChartWidget-Temperature] Updated with 147 points, current: 33.6°C
+[ChartWidget-Power Consumption] Updated with 147 points, current: 66.3W
+[TemperatureSensor] Read: 33.60°C
+[ChartWidget-Temperature] Updated with 148 points, current: 33.6°C
+[ChartWidget-Power Consumption] Updated with 148 points, current: 69.6W
+[TemperatureSensor] Read: 33.59°C
+[ChartWidget-Temperature] Updated with 149 points, current: 33.6°C
+[ChartWidget-Power Consumption] Updated with 149 points, current: 69.3W
+[TemperatureSensor] Read: 33.57°C
+[ChartWidget-Temperature] Updated with 150 points, current: 33.6°C
+[ChartWidget-Power Consumption] Updated with 150 points, current: 70.2W
+[TemperatureSensor] Read: 33.55°C
+[ChartWidget-Temperature] Updated with 151 points, current: 33.5°C
+[ChartWidget-Power Consumption] Updated with 151 points, current: 71.6W
+[TemperatureSensor] Read: 33.54°C
+[ChartWidget-Temperature] Updated with 152 points, current: 33.5°C
+[ChartWidget-Power Consumption] Updated with 152 points, current: 66.2W
+[TemperatureSensor] Read: 33.52°C
+[ChartWidget-Temperature] Updated with 153 points, current: 33.5°C
+[ChartWidget-Power Consumption] Updated with 153 points, current: 61.8W
+[TemperatureSensor] Read: 33.51°C
+[ChartWidget-Temperature] Updated with 154 points, current: 33.5°C
+[ChartWidget-Power Consumption] Updated with 154 points, current: 60.2W
+[TemperatureSensor] Read: 33.49°C
+[ChartWidget-Temperature] Updated with 155 points, current: 33.5°C
+[ChartWidget-Power Consumption] Updated with 155 points, current: 60.6W
+[TemperatureSensor] Read: 33.48°C
+[ChartWidget-Temperature] Updated with 156 points, current: 33.5°C
+[ChartWidget-Power Consumption] Updated with 156 points, current: 59.1W
+[TemperatureSensor] Read: 33.47°C
+[ChartWidget-Temperature] Updated with 157 points, current: 33.5°C
+[ChartWidget-Power Consumption] Updated with 157 points, current: 59.5W
+[TemperatureSensor] Read: 33.46°C
+[ChartWidget-Temperature] Updated with 158 points, current: 33.5°C
+[ChartWidget-Power Consumption] Updated with 158 points, current: 57.2W
+[TemperatureSensor] Read: 33.44°C
+[ChartWidget-Temperature] Updated with 159 points, current: 33.4°C
+[ChartWidget-Power Consumption] Updated with 159 points, current: 61.4W
+[TemperatureSensor] Read: 33.43°C
+[ChartWidget-Temperature] Updated with 160 points, current: 33.4°C
+[ChartWidget-Power Consumption] Updated with 160 points, current: 58.1W
+[TemperatureSensor] Read: 33.43°C
+[ChartWidget-Temperature] Updated with 161 points, current: 33.4°C
+[ChartWidget-Power Consumption] Updated with 161 points, current: 63.0W
+[TemperatureSensor] Read: 33.40°C
+[ChartWidget-Temperature] Updated with 162 points, current: 33.4°C
+[ChartWidget-Power Consumption] Updated with 162 points, current: 61.3W
+[TemperatureSensor] Read: 33.40°C
+[ChartWidget-Temperature] Updated with 163 points, current: 33.4°C
+[ChartWidget-Power Consumption] Updated with 163 points, current: 62.7W
+[TemperatureSensor] Read: 33.39°C
+[ChartWidget-Temperature] Updated with 164 points, current: 33.4°C
+[ChartWidget-Power Consumption] Updated with 164 points, current: 64.4W
+[TemperatureSensor] Read: 33.38°C
+[ChartWidget-Temperature] Updated with 165 points, current: 33.4°C
+[ChartWidget-Power Consumption] Updated with 165 points, current: 67.7W
+[TemperatureSensor] Read: 33.37°C
+[ChartWidget-Temperature] Updated with 166 points, current: 33.4°C
+[ChartWidget-Power Consumption] Updated with 166 points, current: 71.9W
+[TemperatureSensor] Read: 33.37°C
+[ChartWidget-Temperature] Updated with 167 points, current: 33.4°C
+[ChartWidget-Power Consumption] Updated with 167 points, current: 66.2W
+[TemperatureSensor] Read: 33.35°C
+[ChartWidget-Temperature] Updated with 168 points, current: 33.4°C
+[ChartWidget-Power Consumption] Updated with 168 points, current: 69.6W
+[TemperatureSensor] Read: 33.35°C
+[ChartWidget-Temperature] Updated with 169 points, current: 33.3°C
+[ChartWidget-Power Consumption] Updated with 169 points, current: 63.6W
+[TemperatureSensor] Read: 33.33°C
+[ChartWidget-Temperature] Updated with 170 points, current: 33.3°C
+[ChartWidget-Power Consumption] Updated with 170 points, current: 65.3W
+[TemperatureSensor] Read: 33.32°C
+[ChartWidget-Temperature] Updated with 171 points, current: 33.3°C
+[ChartWidget-Power Consumption] Updated with 171 points, current: 66.3W
+[TemperatureSensor] Read: 33.32°C
+[ChartWidget-Temperature] Updated with 172 points, current: 33.3°C
+[ChartWidget-Power Consumption] Updated with 172 points, current: 69.9W
+[TemperatureSensor] Read: 33.30°C
+[ChartWidget-Temperature] Updated with 173 points, current: 33.3°C
+[ChartWidget-Power Consumption] Updated with 173 points, current: 72.2W
+[TemperatureSensor] Read: 33.29°C
+[ChartWidget-Temperature] Updated with 174 points, current: 33.3°C
+[ChartWidget-Power Consumption] Updated with 174 points, current: 73.4W
+[TemperatureSensor] Read: 33.28°C
+[ChartWidget-Temperature] Updated with 175 points, current: 33.3°C
+[ChartWidget-Power Consumption] Updated with 175 points, current: 67.5W
+[TemperatureSensor] Read: 33.27°C
+[ChartWidget-Temperature] Updated with 176 points, current: 33.3°C
+[ChartWidget-Power Consumption] Updated with 176 points, current: 68.1W
+[TemperatureSensor] Read: 33.26°C
+[ChartWidget-Temperature] Updated with 177 points, current: 33.3°C
+[ChartWidget-Power Consumption] Updated with 177 points, current: 66.5W
+[TemperatureSensor] Read: 33.25°C
+[ChartWidget-Temperature] Updated with 178 points, current: 33.3°C
+[ChartWidget-Power Consumption] Updated with 178 points, current: 65.1W
+[TemperatureSensor] Read: 33.24°C
+[ChartWidget-Temperature] Updated with 179 points, current: 33.2°C
+[ChartWidget-Power Consumption] Updated with 179 points, current: 66.1W
+[TemperatureSensor] Read: 33.23°C
+[ChartWidget-Temperature] Updated with 180 points, current: 33.2°C
+[ChartWidget-Power Consumption] Updated with 180 points, current: 64.2W
+[TemperatureSensor] Read: 33.22°C
+[ChartWidget-Temperature] Updated with 181 points, current: 33.2°C
+[ChartWidget-Power Consumption] Updated with 181 points, current: 67.0W
+[TemperatureSensor] Read: 33.21°C
+[ChartWidget-Temperature] Updated with 182 points, current: 33.2°C
+[ChartWidget-Power Consumption] Updated with 182 points, current: 67.0W
+[TemperatureSensor] Read: 33.20°C
+[ChartWidget-Temperature] Updated with 183 points, current: 33.2°C
+[ChartWidget-Power Consumption] Updated with 183 points, current: 70.3W
+[TemperatureSensor] Read: 33.20°C
+[ChartWidget-Temperature] Updated with 184 points, current: 33.2°C
+[ChartWidget-Power Consumption] Updated with 184 points, current: 75.9W
+[TemperatureSensor] Read: 33.18°C
+[ChartWidget-Temperature] Updated with 185 points, current: 33.2°C
+[ChartWidget-Power Consumption] Updated with 185 points, current: 80.3W
+[TemperatureSensor] Read: 33.17°C
+[ChartWidget-Temperature] Updated with 186 points, current: 33.2°C
+[ChartWidget-Power Consumption] Updated with 186 points, current: 86.0W
+[TemperatureSensor] Read: 33.17°C
+[ChartWidget-Temperature] Updated with 187 points, current: 33.2°C
+[ChartWidget-Power Consumption] Updated with 187 points, current: 93.1W
+[TemperatureSensor] Read: 33.16°C
+[ChartWidget-Temperature] Updated with 188 points, current: 33.2°C
+[ChartWidget-Power Consumption] Updated with 188 points, current: 93.3W
+[TemperatureSensor] Read: 33.15°C
+[ChartWidget-Temperature] Updated with 189 points, current: 33.2°C
+[ChartWidget-Power Consumption] Updated with 189 points, current: 95.5W
+[TemperatureSensor] Read: 33.14°C
+[ChartWidget-Temperature] Updated with 190 points, current: 33.1°C
+[ChartWidget-Power Consumption] Updated with 190 points, current: 101.9W
+[TemperatureSensor] Read: 33.12°C
+[ChartWidget-Temperature] Updated with 191 points, current: 33.1°C
+[ChartWidget-Power Consumption] Updated with 191 points, current: 99.6W
+[TemperatureSensor] Read: 33.12°C
+[ChartWidget-Temperature] Updated with 192 points, current: 33.1°C
+[ChartWidget-Power Consumption] Updated with 192 points, current: 104.1W
+[TemperatureSensor] Read: 33.11°C
+[ChartWidget-Temperature] Updated with 193 points, current: 33.1°C
+[ChartWidget-Power Consumption] Updated with 193 points, current: 106.8W
+[TemperatureSensor] Read: 33.15°C
+[ChartWidget-Temperature] Updated with 194 points, current: 33.2°C
+[ChartWidget-Power Consumption] Updated with 194 points, current: 106.3W
+[TemperatureSensor] Read: 33.15°C
+[ChartWidget-Temperature] Updated with 195 points, current: 33.2°C
+[ChartWidget-Power Consumption] Updated with 195 points, current: 109.1W
+[TemperatureSensor] Read: -10.11°C
+[ChartWidget-Temperature] Updated with 196 points, current: -10.1°C
+[ChartWidget-Power Consumption] Updated with 196 points, current: 105.6W
+[TemperatureSensor] Read: 33.14°C
+[ChartWidget-Temperature] Updated with 197 points, current: 33.1°C
+[ChartWidget-Power Consumption] Updated with 197 points, current: 111.3W
+[TemperatureSensor] Read: 33.08°C
+[ChartWidget-Temperature] Updated with 198 points, current: 33.1°C
+[ChartWidget-Power Consumption] Updated with 198 points, current: 114.6W
+[TemperatureSensor] Read: 33.07°C
+[ChartWidget-Temperature] Updated with 199 points, current: 33.1°C
+[ChartWidget-Power Consumption] Updated with 199 points, current: 110.2W
+[TemperatureSensor] Read: -19.23°C
+[ChartWidget-Temperature] Updated with 200 points, current: -19.2°C
+[ChartWidget-Power Consumption] Updated with 200 points, current: 114.1W
+[TemperatureSensor] Read: 33.11°C
+[ChartWidget-Temperature] Updated with 201 points, current: 33.1°C
+[ChartWidget-Power Consumption] Updated with 201 points, current: 113.4W
+[TemperatureSensor] Read: 33.06°C
+[ChartWidget-Temperature] Updated with 202 points, current: 33.1°C
+[ChartWidget-Power Consumption] Updated with 202 points, current: 116.1W
+[TemperatureSensor] Read: 33.06°C
+[ChartWidget-Temperature] Updated with 203 points, current: 33.1°C
+[ChartWidget-Power Consumption] Updated with 203 points, current: 116.2W
+[TemperatureSensor] Read: 33.05°C
+[ChartWidget-Temperature] Updated with 204 points, current: 33.0°C
+[ChartWidget-Power Consumption] Updated with 204 points, current: 116.9W
+[TemperatureSensor] Read: 33.05°C
+[ChartWidget-Temperature] Updated with 205 points, current: 33.1°C
+[ChartWidget-Power Consumption] Updated with 205 points, current: 114.7W
+[TemperatureSensor] Read: 33.04°C
+[ChartWidget-Temperature] Updated with 206 points, current: 33.0°C
+[ChartWidget-Power Consumption] Updated with 206 points, current: 110.6W

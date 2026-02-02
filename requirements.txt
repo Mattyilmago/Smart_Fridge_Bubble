@@ -1,0 +1,6 @@
+PyQt6
+# PyQt6-WebEngine  # Commentato: causa crash su Raspberry Pi, usare solo se necessario
+PyQt6-Charts
+requests
+adafruit-circuitpython-bmp280
+RPi.GPIO
