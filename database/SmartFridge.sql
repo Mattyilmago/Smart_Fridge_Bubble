@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 31.11.38.14:3306
--- Creato il: Feb 02, 2026 alle 19:25
+-- Creato il: Feb 03, 2026 alle 01:53
 -- Versione del server: 8.0.43-34
 -- Versione PHP: 8.0.7
 
@@ -30,10 +30,25 @@ SET time_zone = "+00:00";
 CREATE TABLE `Alerts` (
   `ID` int UNSIGNED NOT NULL,
   `fridge_ID` int UNSIGNED NOT NULL,
-  `timestamp` timestamp NOT NULL,
-  `category` enum('high_temp','door_open','door_closed','critic_power','sensor_offline') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `category` enum('door_open','door_closed','door_left_open','high_temp','critic_temp','low_temp','critic_power','sensor_offline') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `message` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Trigger `Alerts`
+--
+DELIMITER $$
+CREATE TRIGGER `cleanup_old_alerts` AFTER INSERT ON `Alerts` FOR EACH ROW BEGIN
+ IF (NEW.ID % 50) = 0 THEN
+        DELETE FROM Alerts
+        WHERE fridge_ID = NEW.fridge_ID
+          AND timestamp < NOW() - INTERVAL 7 DAY
+        LIMIT 500;
+    END IF;
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -57,14 +72,60 @@ CREATE TABLE `Fridges` (
 CREATE TABLE `Measurements` (
   `ID` int UNSIGNED NOT NULL,
   `fridge_ID` int UNSIGNED NOT NULL,
-  `timestamp` timestamp NOT NULL,
+  `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `temperature` decimal(3,1) NOT NULL COMMENT 'celsius',
   `power` decimal(7,2) NOT NULL COMMENT 'watt'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Trigger `Measurements` per cancellare misurazioni vecchie più di 48h
+-- Trigger `Measurements`
 --
+DELIMITER $$
+CREATE TRIGGER `alert_critic_power` AFTER INSERT ON `Measurements` FOR EACH ROW BEGIN
+	IF NEW.power < 0.0 OR NEW.power > 10000.0 THEN
+   		SIGNAL SQLSTATE '45000'
+    	SET MESSAGE_TEXT = 'Potenza fuori range valido (0-10000W)';
+	END IF;
+
+    IF NEW.power > 500.00 THEN 
+        INSERT INTO Alerts (fridge_ID, timestamp, category, message)
+        VALUES (NEW.fridge_ID, NEW.timestamp, 'critic_power', 
+                CONCAT('POTENZA CRITICA: ', NEW.power, 'W ATTENZIONE'));
+    END IF;
+END
+$$
+DELIMITER ;
+DELIMITER $$
+CREATE TRIGGER `alert_temperature` AFTER INSERT ON `Measurements` FOR EACH ROW BEGIN
+-- Temperatura anomala
+	IF NEW.temperature < -40.0 OR NEW.temperature > 60.0 THEN
+    	SIGNAL SQLSTATE '45000'
+    	SET MESSAGE_TEXT = 'Temperatura fuori range valido';
+	END IF;
+
+ -- Temperatura troppo BASSA (di norma <0°C = rischio congelamento)
+    IF NEW.temperature < 12.0 THEN
+        INSERT INTO Alerts (fridge_ID, timestamp, category, message)
+        VALUES (NEW.fridge_ID, NEW.timestamp, 'low_temp', 
+                CONCAT('Temperatura troppo bassa: ', NEW.temperature, '°C (zona congelamento)'));
+    END IF;
+
+ -- Zona GIALLA: Warning (di norma 6-8°C)
+    IF NEW.temperature > 20.0 AND NEW.temperature <= 25.0 THEN
+        INSERT INTO Alerts (fridge_ID, timestamp, category, message)
+        VALUES (NEW.fridge_ID, NEW.timestamp, 'high_temp', 
+                CONCAT('Temperatura elevata: ', NEW.temperature, '°C (zona warning)'));
+    END IF;
+    
+    -- Zona ROSSA: Pericolo (di norma >8°C)
+    IF NEW.temperature > 25.0 THEN
+        INSERT INTO Alerts (fridge_ID, timestamp, category, message)
+        VALUES (NEW.fridge_ID, NEW.timestamp, 'critic_temp', 
+                CONCAT('TEMPERATURA CRITICA: ', NEW.temperature, '°C (zona pericolo)'));
+    END IF;
+END
+$$
+DELIMITER ;
 DELIMITER $$
 CREATE TRIGGER `cleanup_old_measurements` AFTER INSERT ON `Measurements` FOR EACH ROW BEGIN
 
@@ -102,9 +163,9 @@ CREATE TABLE `ProductsFridge` (
   `fridge_ID` int UNSIGNED NOT NULL,
   `product_ID` int UNSIGNED NOT NULL,
   `quantity` int UNSIGNED NOT NULL DEFAULT '1',
-  `added_in` timestamp NULL DEFAULT NULL,
+  `added_in` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `removed_in` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ;
 
 -- --------------------------------------------------------
 
@@ -119,6 +180,20 @@ CREATE TABLE `ProductsMovements` (
   `quantity` int NOT NULL COMMENT 'positive = added;\r\n\r\n\r\nnegative = removed',
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Trigger `ProductsMovements`
+--
+DELIMITER $$
+CREATE TRIGGER `update_product_quantity` AFTER INSERT ON `ProductsMovements` FOR EACH ROW BEGIN
+ INSERT INTO ProductsFridge (fridge_ID, product_ID, quantity, added_in)
+    VALUES (NEW.fridge_ID, NEW.product_ID, NEW.quantity, NEW.timestamp)
+    ON DUPLICATE KEY UPDATE 
+        quantity = quantity + NEW.quantity,
+        removed_in = IF(quantity + NEW.quantity = 0, NEW.timestamp, NULL);
+END
+$$
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -141,8 +216,9 @@ CREATE TABLE `Users` (
 --
 ALTER TABLE `Alerts`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `fk_alerts_fridge` (`fridge_ID`),
-  ADD KEY `idx_timestamp` (`timestamp` DESC);
+  ADD KEY `idx_timestamp` (`timestamp` DESC),
+  ADD KEY `idx_category` (`fridge_ID`,`category`,`timestamp` DESC),
+  ADD KEY `fk_alerts_fridge` (`fridge_ID`);
 
 --
 -- Indici per le tabelle `Fridges`
@@ -158,7 +234,8 @@ ALTER TABLE `Fridges`
 ALTER TABLE `Measurements`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `idx_measurements_time` (`fridge_ID`,`timestamp` DESC),
-  ADD KEY `idx_timestamp` (`timestamp` DESC);
+  ADD KEY `idx_timestamp` (`timestamp` DESC),
+  ADD KEY `idx_power` (`fridge_ID`,`power` DESC);
 
 --
 -- Indici per le tabelle `Products`
@@ -172,17 +249,18 @@ ALTER TABLE `Products`
 --
 ALTER TABLE `ProductsFridge`
   ADD PRIMARY KEY (`ID`),
+  ADD UNIQUE KEY `idx_fridge_product` (`fridge_ID`,`product_ID`) USING BTREE,
   ADD KEY `fk_productsfridge_product` (`product_ID`),
   ADD KEY `fk_productsfridge_fridge` (`fridge_ID`),
-  ADD KEY `idx_fridge_product` (`fridge_ID`,`product_ID`) USING BTREE;
+  ADD KEY `idx_removed` (`fridge_ID`,`removed_in`);
 
 --
 -- Indici per le tabelle `ProductsMovements`
 --
 ALTER TABLE `ProductsMovements`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `fridge_ID` (`fridge_ID`),
-  ADD KEY `product_ID` (`product_ID`);
+  ADD KEY `idx_movements_time` (`fridge_ID`,`timestamp` DESC),
+  ADD KEY `fk_product` (`product_ID`);
 
 --
 -- Indici per le tabelle `Users`
@@ -205,7 +283,7 @@ ALTER TABLE `Alerts`
 -- AUTO_INCREMENT per la tabella `Fridges`
 --
 ALTER TABLE `Fridges`
-  MODIFY `ID` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT per la tabella `Measurements`
@@ -217,7 +295,7 @@ ALTER TABLE `Measurements`
 -- AUTO_INCREMENT per la tabella `Products`
 --
 ALTER TABLE `Products`
-  MODIFY `ID` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT per la tabella `ProductsFridge`
@@ -229,13 +307,13 @@ ALTER TABLE `ProductsFridge`
 -- AUTO_INCREMENT per la tabella `ProductsMovements`
 --
 ALTER TABLE `ProductsMovements`
-  MODIFY `ID` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT per la tabella `Users`
 --
 ALTER TABLE `Users`
-  MODIFY `ID` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Limiti per le tabelle scaricate
@@ -270,8 +348,8 @@ ALTER TABLE `ProductsFridge`
 -- Limiti per la tabella `ProductsMovements`
 --
 ALTER TABLE `ProductsMovements`
-  ADD CONSTRAINT `ProductsMovements_ibfk_1` FOREIGN KEY (`fridge_ID`) REFERENCES `Fridges` (`ID`),
-  ADD CONSTRAINT `ProductsMovements_ibfk_2` FOREIGN KEY (`product_ID`) REFERENCES `Products` (`ID`);
+  ADD CONSTRAINT `fk_fridge` FOREIGN KEY (`fridge_ID`) REFERENCES `Fridges` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_product` FOREIGN KEY (`product_ID`) REFERENCES `Products` (`ID`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
