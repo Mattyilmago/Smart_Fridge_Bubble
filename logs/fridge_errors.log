@@ -2,3 +2,12 @@
 [2026-02-02 21:45:37] [SmartFridge.camera] [WARNING] Capture failed (attempt 2): Cannot open /dev/video8
 [2026-02-02 21:45:37] [SmartFridge.camera] [WARNING] Capture failed (attempt 3): Cannot open /dev/video8
 [2026-02-02 21:45:37] [SmartFridge.camera] [ERROR] CameraCaptureError: Failed to capture from /dev/video8 after 3 attempts
+[2026-02-03 11:41:57] [SmartFridge.camera] [ERROR] No video devices found!
+[2026-02-03 11:41:57] [SmartFridge.camera] [ERROR] No cameras discovered. Run discover_cameras() first.
+[2026-02-03 11:41:57] [SmartFridge.camera] [ERROR] No cameras available. Run discover_cameras() first.
+[2026-02-03 11:46:40] [SmartFridge.camera] [ERROR] Failed to open /dev/video7
+[2026-02-03 11:46:40] [SmartFridge.camera] [ERROR] Failed to open /dev/video8
+[2026-02-03 11:46:40] [SmartFridge.camera] [WARNING] Camera 7 not in cache, opening now...
+[2026-02-03 11:46:40] [SmartFridge.camera] [ERROR] Cannot open /dev/video7
+[2026-02-03 11:46:40] [SmartFridge.camera] [WARNING] Camera 8 not in cache, opening now...
+[2026-02-03 11:46:40] [SmartFridge.camera] [ERROR] Cannot open /dev/video8
