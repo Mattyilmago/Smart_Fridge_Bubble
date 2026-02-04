@@ -81,6 +81,13 @@ class CameraManager:
         """
         # Nome file dal device path: /dev/video7 -> video7
         device_name = Path(camera.device_path).name
+
+        # label = "sopra" se 1280x720, "sotto" altrimenti
+        if camera.name == "GENERAL - UVC":
+            label = "sotto"
+        else:
+            label = "sopra"
+
         filename = f"{label}_{device_name}_{timestamp}.jpg"
         filepath = str(self.image_dir / filename)
 
