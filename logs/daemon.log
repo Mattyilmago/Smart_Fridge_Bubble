@@ -1,0 +1,1016 @@
+[SmartFridge.daemon] INFO: ============================================================
+[SmartFridge.daemon] INFO: Smart Fridge Daemon - Initializing...
+[SmartFridge.daemon] INFO: ============================================================
+[SmartFridge.server_api] WARNING: Token file not found: fridge_token.json
+[SmartFridge.server_api] INFO: ServerAPI initialized (base_url: http://localhost:5000)
+[SmartFridge.door_sensor] WARNING: DoorSensor running in MOCK mode (manual input via SSH)
+[SmartFridge.yolo] ERROR: ultralytics YOLO not available - install with: pip install ultralytics
+[DataManager-temperature] Initialized
+[DataManager-power] Initialized
+/home/pub/Desktop/Smart_Fridge_Bubble/fridge_daemon.py:99: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  self.last_sensor_send_time = datetime.utcnow()
+[SmartFridge.daemon] INFO: Daemon initialization complete
+[SmartFridge.daemon] INFO: Starting daemon...
+[SmartFridge.daemon] INFO: Initializing components...
+[SmartFridge.daemon] WARNING: Fridge not configured (no token). Run setup procedure.
+[SmartFridge.discoverer] INFO: Releasing video devices from PipeWire...
+[SmartFridge.discoverer] INFO: Found: /dev/video9 | GENERAL - UVC | MJPG 1280x720
+[SmartFridge.discoverer] INFO: Discovery complete: 1 camera(s)
+[SmartFridge.door_sensor] INFO: MOCK mode - no GPIO initialization needed
+[SmartFridge.yolo] ERROR: Cannot initialize: YOLO not available
+[SmartFridge.daemon] ERROR: YOLO initialization failed!
+[Power] Initializing power meter...
+[Power] Power meter initialized successfully
+[SmartFridge.daemon] INFO: All components initialized successfully!
+[SmartFridge.daemon] INFO: Sensor polling thread started
+[SmartFridge.door_sensor] INFO: Door closed callback registered
+[SmartFridge.door_sensor] INFO: Door opened callback registered
+[SmartFridge.door_sensor] INFO: ============================================================
+[SmartFridge.daemon] INFO: Door monitor thread started
+[SmartFridge.daemon] INFO: Daemon running. Press Ctrl+C to stop.
+[SmartFridge.door_sensor] INFO: MOCK MODE - Door Sensor
+[SmartFridge.door_sensor] INFO: ============================================================
+[SmartFridge.door_sensor] INFO: Monitoring trigger file: /tmp/fridge_door_trigger
+[SmartFridge.door_sensor] INFO: To trigger door close, run:
+[SmartFridge.door_sensor] INFO:   touch /tmp/fridge_door_trigger
+[SmartFridge.door_sensor] INFO: ============================================================
+[TemperatureSensor] Read: 16.45°C
+/home/pub/Desktop/Smart_Fridge_Bubble/fridge_daemon.py:248: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  timestamp = datetime.utcnow()
+/home/pub/Desktop/Smart_Fridge_Bubble/fridge_daemon.py:301: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow()
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.46°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.46°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.door_sensor] INFO: ============================================================
+[SmartFridge.door_sensor] INFO: 🚪 Door CLOSING detected (trigger file)
+[SmartFridge.door_sensor] INFO: ============================================================
+[SmartFridge.daemon] INFO: Door closed - starting capture sequence
+[SmartFridge.daemon] INFO: Waiting 2.0s for stabilization...
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Capturing images from cameras...
+[SmartFridge.camera_manager] INFO: Tentativo 1/3 per /dev/video9
+[SmartFridge.camera] INFO: Capturing from /dev/video9 (GENERAL - UVC)
+[SmartFridge.camera] INFO: Saved: captured_images/fridge_video9_20260204_113925.jpg (25294 bytes)
+[SmartFridge.camera_manager] INFO: Catturate 1/1 immagini
+[SmartFridge.daemon] INFO: Captured 1 image(s)
+[SmartFridge.daemon] INFO: Running YOLO detection...
+[SmartFridge.yolo] ERROR: Detector not initialized. Call initialize() first.
+[SmartFridge.daemon] WARNING: No products detected
+[SmartFridge.daemon] WARNING: Fridge not configured, skipping server send
+[SmartFridge.daemon] INFO: Door closed sequence complete
+[SmartFridge.door_sensor] INFO: ============================================================
+[SmartFridge.door_sensor] INFO: Ready for next trigger...
+[SmartFridge.door_sensor] INFO: ============================================================
+[TemperatureSensor] Read: 16.46°C
+/home/pub/Desktop/Smart_Fridge_Bubble/fridge_daemon.py:248: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  timestamp = datetime.utcnow()
+/home/pub/Desktop/Smart_Fridge_Bubble/fridge_daemon.py:301: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow()
+[TemperatureSensor] Read: 16.46°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.44°C
+[TemperatureSensor] Read: 16.46°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.46°C
+[TemperatureSensor] Read: 16.46°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.46°C
+[TemperatureSensor] Read: 16.46°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.46°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.46°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.46°C
+[TemperatureSensor] Read: 16.46°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.46°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.46°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.44°C
+[TemperatureSensor] Read: 16.46°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.45°C
+[TemperatureSensor] Read: 16.47°C
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[SmartFridge.door_sensor] INFO: ============================================================
+[SmartFridge.door_sensor] INFO: 🚪 Door CLOSING detected (trigger file)
+[SmartFridge.door_sensor] INFO: ============================================================
+[SmartFridge.daemon] INFO: Door closed - starting capture sequence
+[SmartFridge.daemon] INFO: Waiting 2.0s for stabilization...
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[SmartFridge.daemon] INFO: Capturing images from cameras...
+[SmartFridge.camera_manager] INFO: Tentativo 1/3 per /dev/video9
+[SmartFridge.camera] INFO: Capturing from /dev/video9 (GENERAL - UVC)
+[SmartFridge.camera] INFO: Saved: captured_images/fridge_video9_20260204_114122.jpg (26368 bytes)
+[SmartFridge.camera_manager] INFO: Catturate 1/1 immagini
+[SmartFridge.daemon] INFO: Captured 1 image(s)
+[SmartFridge.daemon] INFO: Running YOLO detection...
+[SmartFridge.yolo] ERROR: Detector not initialized. Call initialize() first.
+[SmartFridge.daemon] WARNING: No products detected
+[SmartFridge.daemon] WARNING: Fridge not configured, skipping server send
+[SmartFridge.daemon] INFO: Door closed sequence complete
+[SmartFridge.door_sensor] INFO: ============================================================
+[SmartFridge.door_sensor] INFO: Ready for next trigger...
+[SmartFridge.door_sensor] INFO: ============================================================
+[TemperatureSensor] Read: 16.46°C
+/home/pub/Desktop/Smart_Fridge_Bubble/fridge_daemon.py:248: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  timestamp = datetime.utcnow()
+/home/pub/Desktop/Smart_Fridge_Bubble/fridge_daemon.py:301: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  now = datetime.utcnow()
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.45°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.47°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data
+[TemperatureSensor] Read: 16.46°C
+[SmartFridge.daemon] INFO: Sending sensor data to server...
+[SmartFridge.server_api] ERROR: Cannot send data: no token available
+[SmartFridge.daemon] ERROR: Failed to send sensor data

@@ -1,7 +1,7 @@
 """
 Fridge Daemon: orchestratore principale dello smart fridge.
 
-Responsabilità:
+ResponsabilitÃ :
 - Monitora apertura/chiusura porta frigo
 - Cattura foto quando porta si chiude
 - Esegue detection prodotti con YOLO
@@ -12,9 +12,11 @@ Responsabilità:
 
 import time
 import threading
+import json
 from datetime import datetime, timedelta
 from typing import List, Tuple
 from collections import deque
+from pathlib import Path
 
 # Import con path corretti per la tua struttura
 from image_recognition.camera_manager import CameraManager
@@ -29,9 +31,10 @@ from config import (
     API_BASE_URL, FRIDGE_TOKEN_FILE, API_MAX_RETRIES, API_RETRY_DELAY_SECONDS,
     CAMERA_IMAGE_DIR, CAMERA_RESOLUTION, CAMERA_WARMUP_FRAMES, CAMERA_MAX_RETRIES,
     DOOR_GPIO_PIN, DOOR_DEBOUNCE_TIME_SECONDS, DOOR_USE_PULLUP, DOOR_CLOSE_DELAY_SECONDS,
+    DOOR_MOCK_MODE,
     YOLO_MODEL_PATH, YOLO_CONFIDENCE_THRESHOLD, YOLO_MAX_RETRIES,
     SENSOR_DATA_SEND_INTERVAL_SECONDS, TOKEN_VALIDATION_INTERVAL_HOURS,
-    POLLING_INTERVAL_MS
+    POLLING_INTERVAL_MS, SHARED_SENSORS_FILE
 )
 
 
@@ -60,8 +63,6 @@ class FridgeDaemon:
         # Camera manager
         self.camera = CameraManager(
             image_dir=CAMERA_IMAGE_DIR,
-            resolution=CAMERA_RESOLUTION,
-            warmup_frames=CAMERA_WARMUP_FRAMES,
             max_retries=CAMERA_MAX_RETRIES
         )
         
@@ -69,7 +70,8 @@ class FridgeDaemon:
         self.door = DoorSensor(
             gpio_pin=DOOR_GPIO_PIN,
             debounce_time=DOOR_DEBOUNCE_TIME_SECONDS,
-            pull_up=DOOR_USE_PULLUP
+            pull_up=DOOR_USE_PULLUP,
+            mock_mode=DOOR_MOCK_MODE
         )
         
         # YOLO detector
@@ -118,7 +120,7 @@ class FridgeDaemon:
         # === TOKEN VALIDATION ===
         if not self.api.is_configured():
             self.logger.warning("Fridge not configured (no token). Run setup procedure.")
-            # Per ora continua lo stesso in modalità test
+            # Per ora continua lo stesso in modalitÃ  test
         else:
             self.logger.info("Fridge configured, validating token...")
             if self.api.should_validate_token():
@@ -146,7 +148,7 @@ class FridgeDaemon:
         # === YOLO ===
         if not self.yolo.initialize():
             self.logger.error("YOLO initialization failed!")
-            success = False
+            #success = False                    TODO: RICORDATI DI SCOMMENTARE QUESTA RIGA QUANDO AVREMO YOLO
         else:
             # Log info modello
             model_info = self.yolo.get_model_info()
@@ -252,6 +254,9 @@ class FridgeDaemon:
                 self.power_buffer.append((timestamp.isoformat(), power))
                 self.power_data.add_data_point(power, timestamp)
                 
+                # Salva dati in file condiviso per UI
+                self._save_sensors_to_file(temp, power, timestamp)
+                
                 # Invia al server se è passato 1 minuto
                 self._check_sensor_data_send()
                 
@@ -263,8 +268,36 @@ class FridgeDaemon:
             # Aspetta intervallo polling
             time.sleep(POLLING_INTERVAL_MS / 1000.0)
     
+    def _save_sensors_to_file(self, temperature: float, power: float, timestamp: datetime):
+        """
+        Salva i dati dei sensori in un file JSON condiviso per la UI.
+        
+        Args:
+            temperature: Temperatura corrente (°C)
+            power: Potenza corrente (W)
+            timestamp: Timestamp della lettura
+        """
+        try:
+            data = {
+                "temperature": round(temperature, 2),
+                "power": round(power, 2),
+                "timestamp": timestamp.isoformat(),
+                "last_update": datetime.now().isoformat()
+            }
+            
+            # Scrivi atomicamente usando file temporaneo
+            temp_file = Path(SHARED_SENSORS_FILE).with_suffix('.tmp')
+            with open(temp_file, 'w') as f:
+                json.dump(data, f, indent=2)
+            
+            # Rinomina (operazione atomica)
+            temp_file.replace(SHARED_SENSORS_FILE)
+            
+        except Exception as e:
+            self.logger.error(f"Error saving sensors to file: {e}")
+    
     def _check_sensor_data_send(self):
-        """Invia dati sensori al server se è passato l'intervallo configurato."""
+        """Invia dati sensori al server se Ã¨ passato l'intervallo configurato."""
         now = datetime.utcnow()
         elapsed = (now - self.last_sensor_send_time).total_seconds()
         
@@ -286,7 +319,7 @@ class FridgeDaemon:
                     self.last_sensor_send_time = now
                 else:
                     self.logger.error("Failed to send sensor data")
-                    # Non svuota buffer, riproverà al prossimo intervallo
+                    # Non svuota buffer, riproverÃ  al prossimo intervallo
             else:
                 self.logger.debug("No sensor data to send")
                 self.last_sensor_send_time = now
@@ -299,12 +332,12 @@ class FridgeDaemon:
         """Callback chiamata quando la porta si apre."""
         self.logger.info("Door opened")
         # Per ora non facciamo nulla quando la porta si apre
-        # In futuro potremmo attivare una modalità di monitoraggio
+        # In futuro potremmo attivare una modalitÃ  di monitoraggio
     
     def _on_door_closed(self):
         """
         Callback chiamata quando la porta si chiude.
-        Trigger: cattura foto → detection YOLO → invio prodotti al server.
+        Trigger: cattura foto â†’ detection YOLO â†’ invio prodotti al server.
         """
         self.logger.info("Door closed - starting capture sequence")
         
@@ -337,7 +370,7 @@ class FridgeDaemon:
             
             if not products:
                 self.logger.warning("No products detected")
-                # Non è necessariamente un errore (frigo potrebbe essere vuoto)
+                # Non Ã¨ necessariamente un errore (frigo potrebbe essere vuoto)
             else:
                 self.logger.info(f"Detected {len(products)} unique product(s)")
             
@@ -359,7 +392,7 @@ class FridgeDaemon:
                         'ServerSendError',
                         'Failed to send products to server after detection'
                     )
-                    # L'errore è già loggato, continua normalmente
+                    # L'errore Ã¨ giÃ  loggato, continua normalmente
             else:
                 self.logger.warning("Fridge not configured, skipping server send")
             
@@ -402,7 +435,7 @@ class FridgeDaemon:
                 self.logger.info("Token validated successfully")
             else:
                 self.logger.error("Token validation failed!")
-                # Continua comunque, riproverà più tardi
+                # Continua comunque, riproverÃ  piÃ¹ tardi
 
 
 def main():

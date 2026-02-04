@@ -95,3 +95,31 @@ class CameraManager:
 
     def get_camera_count(self) -> int:
         return len(self.cameras)
+    
+    # ============================================================
+    # METODI DI COMPATIBILITÀ PER FRIDGE_DAEMON
+    # ============================================================
+    
+    def discover_cameras(self) -> int:
+        """Alias di discover() per compatibilità con fridge_daemon."""
+        return self.discover()
+    
+    def capture_images(self, label: str = "fridge") -> List[str]:
+        """Alias di capture_all() per compatibilità con fridge_daemon."""
+        return self.capture_all(label)
+    
+    def test_cameras(self) -> bool:
+        """
+        Test dummy delle camere.
+        Le camere sono già testate durante discover(), quindi ritorna sempre True
+        se ci sono camere disponibili.
+        """
+        return len(self.cameras) > 0
+    
+    def cleanup(self):
+        """
+        Cleanup dummy - GStreamer gestisce automaticamente le risorse.
+        Mantenuto per compatibilità con il daemon.
+        """
+        self.logger.info("Camera cleanup (no-op, GStreamer auto-cleanup)")
+        pass

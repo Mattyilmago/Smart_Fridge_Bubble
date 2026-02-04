@@ -4,12 +4,15 @@ Responsabilità:
 - Lettura stato GPIO reed switch
 - Debouncing per evitare falsi positivi
 - Callback su eventi apertura/chiusura
-- Gestione edge detection
+- Mock mode con input manuale per testing remoto
 """
 
 import time
 from typing import Optional, Callable
 from enum import Enum
+import sys
+from pathlib import Path
+
 from logger.logger import get_logger
 
 try:
@@ -38,7 +41,8 @@ class DoorSensor:
     
     def __init__(self, gpio_pin: int = 17, 
                  debounce_time: float = 0.1,
-                 pull_up: bool = True):
+                 pull_up: bool = True,
+                 mock_mode: bool = False):
         """
         Inizializza il sensore porta.
         
@@ -46,10 +50,12 @@ class DoorSensor:
             gpio_pin: Pin GPIO a cui è collegato il reed switch (default: GPIO17)
             debounce_time: Tempo di debouncing in secondi (default: 0.1s = 100ms)
             pull_up: Se True usa pull-up interno (GPIO HIGH quando aperto)
+            mock_mode: Se True, usa input manuale invece di GPIO (per testing remoto via SSH)
         """
         self.gpio_pin = gpio_pin
         self.debounce_time = debounce_time
         self.pull_up = pull_up
+        self.mock_mode = mock_mode or not GPIO_AVAILABLE
         
         self.logger = get_logger('door_sensor')
         
@@ -63,8 +69,11 @@ class DoorSensor:
         
         self._is_initialized = False
         
-        if not GPIO_AVAILABLE:
-            self.logger.warning("RPi.GPIO not available - running in MOCK mode")
+        if self.mock_mode:
+            self.logger.warning("DoorSensor running in MOCK mode (manual input via SSH)")
+        elif not GPIO_AVAILABLE:
+            self.logger.warning("RPi.GPIO not available - forcing MOCK mode")
+            self.mock_mode = True
         else:
             self.logger.info(f"DoorSensor initialized (GPIO pin: {gpio_pin})")
     
@@ -75,8 +84,8 @@ class DoorSensor:
         Returns:
             bool: True se inizializzazione riuscita, False altrimenti
         """
-        if not GPIO_AVAILABLE:
-            self.logger.warning("GPIO not available - skipping hardware initialization")
+        if self.mock_mode:
+            self.logger.info("MOCK mode - no GPIO initialization needed")
             self._is_initialized = True
             self._current_state = DoorState.CLOSED  # Assume porta chiusa in mock
             return True
@@ -105,7 +114,7 @@ class DoorSensor:
     
     def _update_state(self):
         """Aggiorna lo stato corrente leggendo il GPIO."""
-        if not GPIO_AVAILABLE:
+        if self.mock_mode:
             return
         
         # Leggi GPIO
@@ -135,7 +144,9 @@ class DoorSensor:
             self.logger.warning("Sensor not initialized")
             return DoorState.UNKNOWN
         
-        self._update_state()
+        if not self.mock_mode:
+            self._update_state()
+        
         return self._current_state
     
     def is_door_closed(self) -> bool:
@@ -155,66 +166,6 @@ class DoorSensor:
             bool: True se porta aperta, False altrimenti
         """
         return self.get_state() == DoorState.OPEN
-    
-    def wait_for_door_closed(self, timeout: Optional[float] = None,
-                            check_interval: float = 0.1) -> bool:
-        """
-        Attende che la porta si chiuda.
-        
-        Args:
-            timeout: Timeout in secondi (None = attesa infinita)
-            check_interval: Intervallo tra controlli in secondi
-        
-        Returns:
-            bool: True se porta si è chiusa, False se timeout
-        """
-        self.logger.info("Waiting for door to close...")
-        start_time = time.time()
-        
-        while True:
-            if self.is_door_closed():
-                # Applica debouncing: aspetta che lo stato rimanga stabile
-                time.sleep(self.debounce_time)
-                if self.is_door_closed():
-                    self.logger.info("Door closed detected")
-                    return True
-            
-            # Check timeout
-            if timeout and (time.time() - start_time) > timeout:
-                self.logger.warning(f"Timeout waiting for door to close ({timeout}s)")
-                return False
-            
-            time.sleep(check_interval)
-    
-    def wait_for_door_opened(self, timeout: Optional[float] = None,
-                            check_interval: float = 0.1) -> bool:
-        """
-        Attende che la porta si apra.
-        
-        Args:
-            timeout: Timeout in secondi (None = attesa infinita)
-            check_interval: Intervallo tra controlli in secondi
-        
-        Returns:
-            bool: True se porta si è aperta, False se timeout
-        """
-        self.logger.info("Waiting for door to open...")
-        start_time = time.time()
-        
-        while True:
-            if self.is_door_open():
-                # Applica debouncing
-                time.sleep(self.debounce_time)
-                if self.is_door_open():
-                    self.logger.info("Door opened detected")
-                    return True
-            
-            # Check timeout
-            if timeout and (time.time() - start_time) > timeout:
-                self.logger.warning(f"Timeout waiting for door to open ({timeout}s)")
-                return False
-            
-            time.sleep(check_interval)
     
     def set_on_door_closed_callback(self, callback: Callable):
         """
@@ -241,10 +192,66 @@ class DoorSensor:
         Loop di monitoraggio continuo con callback su cambio stato.
         BLOCKING - da usare in thread separato.
         
+        In MOCK mode: aspetta input ENTER dall'utente per simulare chiusura porta.
+        In HARDWARE mode: polling GPIO continuo.
+        
         Args:
-            check_interval: Intervallo tra controlli in secondi
+            check_interval: Intervallo tra controlli in secondi (solo hardware mode)
         """
-        self.logger.info("Starting door monitor loop...")
+        if not self._is_initialized:
+            self.logger.error("Sensor not initialized, call initialize() first")
+            return
+        
+        if self.mock_mode:
+            self._mock_monitor_loop()
+        else:
+            self._hardware_monitor_loop(check_interval)
+    
+    def _mock_monitor_loop(self):
+        """Loop MOCK: monitora file trigger per simulare chiusura porta."""
+        self.logger.info("=" * 60)
+        self.logger.info("MOCK MODE - Door Sensor")
+        self.logger.info("=" * 60)
+        self.logger.info("Monitoring trigger file: /tmp/fridge_door_trigger")
+        self.logger.info("To trigger door close, run:")
+        self.logger.info("  touch /tmp/fridge_door_trigger")
+        self.logger.info("=" * 60)
+        
+        trigger_file = Path("/tmp/fridge_door_trigger")
+        
+        try:
+            while True:
+                # Controlla se esiste il file trigger
+                if trigger_file.exists():
+                    self.logger.info("=" * 60)
+                    self.logger.info("🚪 Door CLOSING detected (trigger file)")
+                    self.logger.info("=" * 60)
+                    
+                    # Rimuovi il file trigger
+                    trigger_file.unlink()
+                    
+                    # Aggiorna stato interno
+                    self._current_state = DoorState.CLOSED
+                    self._last_change_time = time.time()
+                    
+                    # Trigger callback chiusura porta
+                    if self._on_door_closed:
+                        self._on_door_closed()
+                    else:
+                        self.logger.warning("No callback registered for door closed event")
+                    
+                    self.logger.info("=" * 60)
+                    self.logger.info("Ready for next trigger...")
+                    self.logger.info("=" * 60)
+                
+                time.sleep(0.5)  # Controlla ogni 500ms
+                
+        except KeyboardInterrupt:
+            self.logger.info("\nMock monitor loop interrupted by user (Ctrl+C)")
+    
+    def _hardware_monitor_loop(self, check_interval: float):
+        """Loop HARDWARE: polling GPIO con debouncing e callback."""
+        self.logger.info("Starting hardware door monitor loop...")
         
         previous_state = self.get_state()
         
@@ -272,11 +279,11 @@ class DoorSensor:
                 time.sleep(check_interval)
                 
         except KeyboardInterrupt:
-            self.logger.info("Monitor loop interrupted by user")
+            self.logger.info("Hardware monitor loop interrupted by user")
     
     def cleanup(self):
         """Libera risorse GPIO."""
-        if GPIO_AVAILABLE and self._is_initialized:
+        if not self.mock_mode and GPIO_AVAILABLE and self._is_initialized:
             try:
                 GPIO.cleanup(self.gpio_pin)
                 self.logger.info("GPIO cleanup complete")
@@ -286,13 +293,13 @@ class DoorSensor:
         self._is_initialized = False
     
     # ============================================================
-    # MOCK MODE (per testing senza hardware)
+    # FUNZIONI MOCK AGGIUNTIVE (per testing programmatico)
     # ============================================================
     
     def simulate_door_close(self):
-        """MOCK: Simula chiusura porta (solo per testing)."""
-        if GPIO_AVAILABLE:
-            self.logger.warning("simulate_door_close() called with real GPIO - ignoring")
+        """MOCK: Simula chiusura porta (solo per testing programmatico)."""
+        if not self.mock_mode:
+            self.logger.warning("simulate_door_close() called without mock_mode - ignoring")
             return
         
         self.logger.info("MOCK: Simulating door close")
@@ -303,9 +310,9 @@ class DoorSensor:
             self._on_door_closed()
     
     def simulate_door_open(self):
-        """MOCK: Simula apertura porta (solo per testing)."""
-        if GPIO_AVAILABLE:
-            self.logger.warning("simulate_door_open() called with real GPIO - ignoring")
+        """MOCK: Simula apertura porta (solo per testing programmatico)."""
+        if not self.mock_mode:
+            self.logger.warning("simulate_door_open() called without mock_mode - ignoring")
             return
         
         self.logger.info("MOCK: Simulating door open")

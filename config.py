@@ -47,6 +47,7 @@ DOOR_GPIO_PIN = 17                    # Pin GPIO per reed switch (BCM numbering)
 DOOR_DEBOUNCE_TIME_SECONDS = 0.1      # Tempo debouncing (100ms)
 DOOR_USE_PULLUP = True                # True = pull-up, False = pull-down
 DOOR_CLOSE_DELAY_SECONDS = 2.0        # Attesa dopo chiusura porta prima di scattare foto
+DOOR_MOCK_MODE = True                 # True = input manuale via SSH, False = GPIO reale
 
 # === CONFIGURAZIONI YOLO ===
 YOLO_MODEL_PATH = "yolov8n.pt"        # Path modello YOLO (o "models/custom_food_model.pt")
@@ -57,6 +58,9 @@ YOLO_MAX_RETRIES = 2                  # Retry su errore detection
 LOG_DIR = "logs"                      # Directory per file di log
 LOG_MAX_FILE_SIZE_MB = 10             # Dimensione massima singolo file log (rotazione)
 LOG_BACKUP_COUNT = 5                  # Numero file di backup da mantenere
+
+# === FILE CONDIVISO SENSORI (per UI) ===
+SHARED_SENSORS_FILE = "/tmp/fridge_sensors.json"  # File condiviso tra daemon e UI
 
 # === CONFIGURAZIONI UI ===
 WINDOW_TITLE = "Smart Fridge Monitor"

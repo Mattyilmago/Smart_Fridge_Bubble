@@ -10,7 +10,7 @@ from PyQt6.QtCore import Qt, QTimer
 from PyQt6.QtGui import QColor, QPalette
 from .ads_widget import AdsWidget
 from .chart_widget import ChartWidget
-from sensors import TemperatureSensor, PowerSensor
+from sensors.shared_sensors import SharedTemperatureSensor as TemperatureSensor, SharedPowerSensor as PowerSensor
 from data import DataManager
 from config import (WINDOW_TITLE, ADS_HEIGHT_PERCENT, CHARTS_HEIGHT_PERCENT,
                    POLLING_INTERVAL_MS, CHART_COLORS, HISTORY_HOURS)
