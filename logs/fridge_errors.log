@@ -5897,3 +5897,93 @@ streaming stopped, reason not-negotiated (-4)
 [2026-02-04 15:07:11] [SmartFridge.daemon] [ERROR] Failed to send sensor data
 [2026-02-04 15:07:12] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
 [2026-02-04 15:07:12] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:13] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:13] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:14] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:14] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:15] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:15] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:16] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:16] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:17] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:17] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:19] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:19] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:20] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:20] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:21] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:21] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:22] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:22] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:23] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:23] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:24] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:24] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:25] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:25] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:26] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:26] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:27] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:27] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:28] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:28] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:29] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:29] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:30] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:30] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:31] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:31] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:32] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:32] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:33] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:33] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:34] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:34] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:35] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:35] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:36] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:36] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:37] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:37] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:38] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:38] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:39] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:39] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:40] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:40] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:42] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:42] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:43] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:43] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:44] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:44] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:45] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:45] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:46] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:46] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:47] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:47] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:48] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:48] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:49] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:49] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:50] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:50] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:51] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:51] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:52] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:52] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:53] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:53] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:54] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:54] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:55] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:55] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:07:56] [SmartFridge.server_api] [ERROR] Cannot send data: no token available
+[2026-02-04 15:07:56] [SmartFridge.daemon] [ERROR] Failed to send sensor data
+[2026-02-04 15:12:35] [SmartFridge.server_api] [WARNING] Token file not found: fridge_token.json
+[2026-02-04 15:12:35] [SmartFridge.door_sensor] [WARNING] DoorSensor running in MOCK mode (manual input via SSH)
+[2026-02-04 15:12:35] [SmartFridge.yolo] [ERROR] ultralytics YOLO not available - install with: pip install ultralytics
+[2026-02-04 15:12:35] [SmartFridge.daemon] [WARNING] Fridge not configured (no token). Run setup procedure.
+[2026-02-04 15:12:35] [SmartFridge.yolo] [ERROR] Cannot initialize: YOLO not available
+[2026-02-04 15:12:35] [SmartFridge.daemon] [ERROR] YOLO initialization failed!
