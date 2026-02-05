@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 31.11.38.14:3306
--- Creato il: Feb 03, 2026 alle 01:53
+-- Creato il: Feb 05, 2026 alle 11:49
 -- Versione del server: 8.0.43-34
 -- Versione PHP: 8.0.7
 
@@ -59,7 +59,6 @@ DELIMITER ;
 CREATE TABLE `Fridges` (
   `ID` int UNSIGNED NOT NULL,
   `user_ID` int UNSIGNED DEFAULT NULL,
-  `token` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `position` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -225,7 +224,6 @@ ALTER TABLE `Alerts`
 --
 ALTER TABLE `Fridges`
   ADD PRIMARY KEY (`ID`),
-  ADD UNIQUE KEY `unique_token` (`token`) USING BTREE,
   ADD KEY `fk_fridges_user` (`user_ID`);
 
 --
