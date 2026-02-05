@@ -1,8 +1,24 @@
 """
 Database package per Smart Fridge
+
+Classi stateless: il fridge_id viene passato come parametro.
+Questo permette di gestire richieste concorrenti da frigo diversi.
 """
 
-from .db_manager import DatabaseManager, DatabaseConfig, create_database_manager
-from .queries import AuthQueries
+from .connection import DatabaseConfig, DatabaseConnection
+from .fridge_db import FridgeDatabase
+from .user_db import UserDatabase
 
-__all__ = ['DatabaseManager', 'DatabaseConfig', 'create_database_manager', 'AuthQueries']
+# Backward compatibility
+DatabaseManager = FridgeDatabase
+AuthQueries = UserDatabase
+
+__all__ = [
+    'DatabaseConfig',
+    'DatabaseConnection', 
+    'FridgeDatabase',
+    'UserDatabase',
+    # Backward compatibility
+    'DatabaseManager',
+    'AuthQueries'
+]

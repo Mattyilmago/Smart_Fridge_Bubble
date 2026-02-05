@@ -11,6 +11,36 @@ from utils.logger import get_logger
 logger = get_logger('jwt')
 
 
+def generate_user_token(user_id: int) -> str:
+    """
+    Genera token JWT per utente
+    
+    Args:
+        user_id: ID dell'utente
+    
+    Returns:
+        str: Token JWT firmato
+    
+    Example:
+        token = generate_user_token(123)
+        # "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+    """
+    payload = {
+        'user_id': user_id,
+        'exp': datetime.utcnow() + Config.FRIDGE_TOKEN_EXPIRY,  # Stessa durata dei fridge token
+        'iat': datetime.utcnow()
+    }
+    
+    token = jwt.encode(
+        payload,
+        Config.JWT_SECRET_KEY,
+        algorithm=Config.JWT_ALGORITHM
+    )
+    
+    logger.debug(f"Generated token for user {user_id}, expires: {payload['exp']}")
+    return token
+
+
 def generate_fridge_token(fridge_id: int) -> str:
     """
     Genera token JWT per frigo
@@ -66,14 +96,20 @@ def decode_fridge_token(token: str, verify_exp: bool = True) -> Optional[Dict]:
             algorithms=[Config.JWT_ALGORITHM],
             options=options
         )
+        
+        # Verifica che contenga fridge_id
+        if 'fridge_id' not in payload:
+            logger.error("Fridge token missing 'fridge_id' field")
+            return None
+        
         return payload
         
     except jwt.ExpiredSignatureError:
-        logger.warning(f"Token expired")
+        logger.warning("Fridge token expired")
         return None
         
     except jwt.InvalidTokenError as e:
-        logger.warning(f"Invalid token: {e}")
+        logger.warning(f"Invalid fridge token: {e}")
         return None
 
 

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 31.11.38.14:3306
--- Creato il: Feb 05, 2026 alle 11:49
+-- Creato il: Feb 05, 2026 alle 19:41
 -- Versione del server: 8.0.43-34
 -- Versione PHP: 8.0.7
 
@@ -59,7 +59,8 @@ DELIMITER ;
 CREATE TABLE `Fridges` (
   `ID` int UNSIGNED NOT NULL,
   `user_ID` int UNSIGNED DEFAULT NULL,
-  `position` varchar(100) DEFAULT NULL
+  `position` varchar(100) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
@@ -224,7 +225,7 @@ ALTER TABLE `Alerts`
 --
 ALTER TABLE `Fridges`
   ADD PRIMARY KEY (`ID`),
-  ADD KEY `fk_fridges_user` (`user_ID`);
+  ADD KEY `idx_user_created` (`user_ID`,`created_at` DESC);
 
 --
 -- Indici per le tabelle `Measurements`

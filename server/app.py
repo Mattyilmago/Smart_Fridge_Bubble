@@ -8,7 +8,9 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 from config import Config
 from utils.logger import get_logger
-from auth.routes import auth_bp
+from api.auth.routes import auth_bp
+from api.users.routes import users_bp
+from api.fridges.routes import fridges_bp
 
 # Logger
 logger = get_logger('main')
@@ -31,7 +33,9 @@ limiter.limit(f"{Config.RATE_LIMIT_RENEW_PER_HOUR} per hour")(auth_bp.route('/re
 limiter.limit(f"{Config.RATE_LIMIT_IS_AUTHORIZED_PER_DAY} per day")(auth_bp.route('/isAuthorized'))
 
 # Registra blueprint
-app.register_blueprint(auth_bp)
+app.register_blueprint(auth_bp, url_prefix='/auth')
+app.register_blueprint(users_bp, url_prefix='/api/users')
+app.register_blueprint(fridges_bp, url_prefix='/api/fridges')
 
 
 @app.route('/')
@@ -47,9 +51,9 @@ def index():
 @app.route('/health')
 def health():
     """Health check dettagliato"""
-    from database import AuthQueries
+    from database import UserDatabase
     
-    db = AuthQueries()
+    db = UserDatabase()
     db_status = "ok" if db.test_connection() else "error"
     
     return {

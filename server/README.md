@@ -50,7 +50,72 @@ gunicorn -w 4 -b 0.0.0.0:5000 app:app
 
 ## API Endpoints
 
-### POST /registerFrigo
+### Autenticazione Utenti
+
+#### POST /auth/registerUser
+Registra nuovo utente
+
+**Request:**
+```json
+{
+  "email": "user@example.com",
+  "password": "securePassword123"
+}
+```
+
+**Response (200):**
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+```
+
+**Errors:**
+- `400` - Email o password mancanti/invalidi
+- `409` - Email già registrata
+- `500` - Errore database
+
+---
+
+#### GET /auth/isAuthorizedUser
+Valida user_token
+
+**Query Params:**
+- `user_token` - Token JWT utente da validare
+
+**Response (200):**
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+```
+(stesso token se valido, nuovo token se in scadenza)
+
+**Errors:**
+- `401` - Token scaduto o invalido
+
+---
+
+#### POST /auth/renewUser
+Rinnova user_token scaduto
+
+**Request:**
+```json
+{
+  "user_token": "eyJhbGc..."
+}
+```
+
+**Response (200):**
+```
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+```
+
+**Errors:**
+- `401` - Token invalido
+- `404` - Utente non trovato
+
+---
+
+### Autenticazione Frighi
+
+#### POST /auth/registerFridge
 Registra nuovo frigo
 
 **Request:**
@@ -73,7 +138,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 
 ---
 
-### GET /isAuthorized
+#### GET /auth/isAuthorizedFridge
 Valida token frigo
 
 **Query Params:**
@@ -90,7 +155,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 
 ---
 
-### POST /renewFrigo
+#### POST /auth/renewFridge
 Rinnova token frigo scaduto
 
 **Request:**
@@ -113,6 +178,336 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
 
 ---
 
+## API Users (Lato Utente)
+Gestione frighi da parte dell'utente via app mobile.
+
+### GET /api/users/fridges
+Recupera tutti i frighi dell'utente
+
+**Query Params:**
+- `user_token` - Token JWT utente
+
+**Response (200):**
+```json
+{
+  "success": true,
+  "fridges": [
+    {
+      "ID": 1,
+      "position": "Cucina",
+      "created_at": "2026-01-15 10:30:00"
+    }
+  ]
+}
+```
+
+---
+
+### GET /api/users/fridge/<fridge_id>
+Recupera informazioni dettagliate di un frigo
+
+**Query Params:**
+- `user_token` - Token JWT utente
+
+**Response (200):**
+```json
+{
+  "success": true,
+  "fridge": {
+    "ID": 1,
+    "user_ID": 42,
+    "position": "Cucina",
+    "created_at": "2026-01-15 10:30:00"
+  }
+}
+```
+
+**Errors:**
+- `403` - Frigo appartiene ad altro utente
+- `404` - Frigo non trovato
+
+---
+
+### PUT /api/users/fridge/<fridge_id>/position
+Aggiorna posizione frigo
+
+**Request:**
+```json
+{
+  "user_token": "eyJ...",
+  "position": "Garage"
+}
+```
+
+**Response (200):**
+```json
+{
+  "success": true,
+  "message": "Posizione aggiornata"
+}
+```
+
+---
+
+### DELETE /api/users/fridge/<fridge_id>
+Elimina un frigo
+
+**Request:**
+```json
+{
+  "user_token": "eyJ..."
+}
+```
+
+**Response (200):**
+```json
+{
+  "success": true,
+  "message": "Frigo eliminato"
+}
+```
+
+---
+
+## API Fridges (Lato Frigo)
+Operazioni eseguite dal Raspberry Pi del frigo.
+
+### POST /api/fridges/measurement
+Inserisce nuova misurazione (temperatura + potenza)
+
+**Request:**
+```json
+{
+  "fridge_token": "eyJ...",
+  "temperature": 4.5,
+  "power": 120.3,
+  "timestamp": "2026-02-05 14:30:00"  // optional
+}
+```
+
+**Response (201):**
+```json
+{
+  "success": true,
+  "measurement_id": 123
+}
+```
+
+---
+
+### GET /api/fridges/measurements/history
+Recupera storico misurazioni
+
+**Query Params:**
+- `fridge_token` - Token JWT frigo
+- `hours` - Ore di storico (default: 48)
+
+**Response (200):**
+```json
+{
+  "success": true,
+  "measurements": [
+    {
+      "timestamp": "2026-02-05 14:30:00",
+      "temperature": 4.5,
+      "power": 120.3
+    }
+  ]
+}
+```
+
+---
+
+### GET /api/fridges/measurements/temperature/stats
+Statistiche temperatura
+
+**Query Params:**
+- `fridge_token` - Token JWT frigo
+- `hours` - Ore di storico (default: 48)
+
+**Response (200):**
+```json
+{
+  "success": true,
+  "stats": {
+    "count": 100,
+    "average": 4.2,
+    "min": 3.8,
+    "max": 5.1
+  }
+}
+```
+
+---
+
+### GET /api/fridges/measurements/power/stats
+Statistiche consumo
+
+(Stesso formato di temperature/stats)
+
+---
+
+### POST /api/fridges/alert
+Inserisce nuovo alert
+
+**Request:**
+```json
+{
+  "fridge_token": "eyJ...",
+  "category": "high_temp",
+  "message": "Temperatura alta rilevata",
+  "timestamp": "2026-02-05 14:30:00"  // optional
+}
+```
+
+**Response (201):**
+```json
+{
+  "success": true,
+  "alert_id": 456
+}
+```
+
+---
+
+### GET /api/fridges/alerts/recent
+Recupera alert recenti
+
+**Query Params:**
+- `fridge_token` - Token JWT frigo
+- `hours` - Ore di storico (default: 24)
+- `category` - Filtra per categoria (optional)
+
+**Response (200):**
+```json
+{
+  "success": true,
+  "alerts": [
+    {
+      "ID": 1,
+      "timestamp": "2026-02-05 14:30:00",
+      "category": "high_temp",
+      "message": "Temperatura alta"
+    }
+  ]
+}
+```
+
+---
+
+### GET /api/fridges/alerts/critical
+Recupera solo alert critici
+
+**Query Params:**
+- `fridge_token` - Token JWT frigo
+- `hours` - Ore di storico (default: 24)
+
+---
+
+### POST /api/fridges/door
+Registra evento porta (aperta/chiusa)
+
+**Request:**
+```json
+{
+  "fridge_token": "eyJ...",
+  "is_open": true
+}
+```
+
+**Response (201):**
+```json
+{
+  "success": true,
+  "alert_id": 789
+}
+```
+
+---
+
+### POST /api/fridges/product/movement
+Registra movimento prodotto (aggiunta/rimozione)
+
+**Request:**
+```json
+{
+  "fridge_token": "eyJ...",
+  "product_id": 5,
+  "quantity": 2,  // positivo=aggiunta, negativo=rimozione
+  "timestamp": "2026-02-05 14:30:00"  // optional
+}
+```
+
+**Response (201):**
+```json
+{
+  "success": true,
+  "movement_id": 321
+}
+```
+
+---
+
+### GET /api/fridges/products/current
+Recupera prodotti attualmente nel frigo
+
+**Query Params:**
+- `fridge_token` - Token JWT frigo
+
+**Response (200):**
+```json
+{
+  "success": true,
+  "products": [
+    {
+      "fridge_product_id": 1,
+      "product_id": 5,
+      "name": "Latte",
+      "brand": "Granarolo",
+      "category": "Latticini",
+      "quantity": 2,
+      "added_in": "2026-02-03 10:00:00"
+    }
+  ]
+}
+```
+
+---
+
+### GET /api/fridges/products/movements/history
+Storico movimenti prodotti
+
+**Query Params:**
+- `fridge_token` - Token JWT frigo
+- `hours` - Ore di storico (default: 168 = 7 giorni)
+
+---
+
+### GET /api/fridges/product/search
+Cerca prodotto per nome (per YOLO detection)
+
+**Query Params:**
+- `fridge_token` - Token JWT frigo
+- `name` - Nome prodotto
+
+**Response (200):**
+```json
+{
+  "success": true,
+  "product": {
+    "ID": 5,
+    "name": "Latte",
+    "brand": "Granarolo",
+    "category": "Latticini"
+  }
+}
+```
+
+**Errors:**
+- `404` - Prodotto non trovato
+
+---
+
 ## Struttura Progetto
 ```
 server/
@@ -121,17 +516,30 @@ server/
 ├── .env                # Variabili ambiente (non in git)
 ├── requirements.txt    # Dipendenze
 │
-├── auth/               # Autenticazione
-│   ├── jwt_utils.py    # JWT utilities
-│   └── routes.py       # Route auth
+├── api/                # API Routes
+│   ├── __init__.py
+│   ├── auth/           # Autenticazione JWT
+│   │   ├── __init__.py
+│   │   └── routes.py   # Route auth
+│   ├── users/          # API lato utente
+│   │   ├── __init__.py
+│   │   └── routes.py   # Route gestione frighi (user)
+│   └── fridges/        # API lato frigo
+│       ├── __init__.py
+│       └── routes.py   # Route measurements/alerts/products
 │
 ├── database/           # Database
-│   ├── db_manager.py   # DatabaseManager
-│   └── queries.py      # Query auth
+│   ├── __init__.py
+│   ├── connection.py   # Connection pooling
+│   ├── user_db.py      # Query utente/frigo
+│   └── fridge_db.py    # Query measurements/alerts/products
 │
 ├── utils/              # Utilities
+│   ├── __init__.py
 │   ├── logger.py       # Logger
-│   └── errors.py       # Gestione errori
+│   ├── errors.py       # Gestione errori
+│   ├── jwt_utils.py    # JWT utilities
+│   └── request_auth.py # Request auth helpers
 │
 └── logs/               # Log files
     └── server.log

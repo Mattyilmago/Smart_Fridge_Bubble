@@ -27,6 +27,7 @@ class Config:
     
     JWT_ALGORITHM = os.getenv('JWT_ALGORITHM', 'HS256')
     FRIDGE_TOKEN_EXPIRY_DAYS = int(os.getenv('FRIDGE_TOKEN_EXPIRY_DAYS', 30))
+    USER_TOKEN_EXPIRY_DAYS = int(os.getenv('FRIDGE_TOKEN_EXPIRY_DAYS', 30))
     RENEWAL_THRESHOLD_DAYS = int(os.getenv('RENEWAL_THRESHOLD_DAYS', 7))
     
     # Converti in timedelta per uso interno
@@ -53,6 +54,61 @@ class Config:
     LOG_MAX_SIZE_MB = int(os.getenv('LOG_MAX_SIZE_MB', 10))
     LOG_BACKUP_COUNT = int(os.getenv('LOG_BACKUP_COUNT', 5))
     LOG_LEVEL = os.getenv('LOG_LEVEL', 'INFO')
+    
+    # User Authentication & Validation
+    MIN_PASSWORD_LENGTH = int(os.getenv('MIN_PASSWORD_LENGTH', 6))
+    MAX_PASSWORD_LENGTH = int(os.getenv('MAX_PASSWORD_LENGTH', 128))
+    MIN_EMAIL_LENGTH = int(os.getenv('MIN_EMAIL_LENGTH', 5))
+    REQUIRE_PASSWORD_UPPERCASE = os.getenv('REQUIRE_PASSWORD_UPPERCASE', 'False').lower() == 'true'
+    REQUIRE_PASSWORD_NUMBERS = os.getenv('REQUIRE_PASSWORD_NUMBERS', 'False').lower() == 'true'
+    REQUIRE_PASSWORD_SYMBOLS = os.getenv('REQUIRE_PASSWORD_SYMBOLS', 'False').lower() == 'true'
+
+
+class APIDefaults:
+    """Valori default per parametri API"""
+    
+    # Measurements
+    MEASUREMENTS_HISTORY_HOURS = int(os.getenv('MEASUREMENTS_HISTORY_HOURS', 48))
+    TEMPERATURE_STATS_HOURS = int(os.getenv('TEMPERATURE_STATS_HOURS', 48))
+    POWER_STATS_HOURS = int(os.getenv('POWER_STATS_HOURS', 48))
+    
+    # Alerts
+    RECENT_ALERTS_HOURS = int(os.getenv('RECENT_ALERTS_HOURS', 24))
+    CRITICAL_ALERTS_HOURS = int(os.getenv('CRITICAL_ALERTS_HOURS', 2))
+    ALERT_STATISTICS_DAYS = int(os.getenv('ALERT_STATISTICS_DAYS', 7))
+    
+    # Products
+    PRODUCT_MOVEMENTS_HOURS = int(os.getenv('PRODUCT_MOVEMENTS_HOURS', 168))  # 7 giorni
+    SHOPPING_LIST_HOURS = int(os.getenv('SHOPPING_LIST_HOURS', 48))
+    MOST_CONSUMED_DAYS = int(os.getenv('MOST_CONSUMED_DAYS', 30))
+    MOST_CONSUMED_LIMIT = int(os.getenv('MOST_CONSUMED_LIMIT', 10))
+    
+    # Energy & Analytics
+    ENERGY_CONSUMPTION_HOURS = int(os.getenv('ENERGY_CONSUMPTION_HOURS', 24))
+    ENERGY_COST_PER_KWH = float(os.getenv('ENERGY_COST_PER_KWH', 0.25))  # Euro per kWh
+    HOURLY_PATTERN_HOURS = int(os.getenv('HOURLY_PATTERN_HOURS', 168))  # 7 giorni
+    TEMPERATURE_TREND_HOURS = int(os.getenv('TEMPERATURE_TREND_HOURS', 6))
+    DOOR_STATISTICS_HOURS = int(os.getenv('DOOR_STATISTICS_HOURS', 24))
+
+
+class SensorThresholds:
+    """Soglie sensori e validazione"""
+    
+    # Temperature (°C)
+    TEMP_MIN_VALID = float(os.getenv('TEMP_MIN_VALID', -40.0))
+    TEMP_MAX_VALID = float(os.getenv('TEMP_MAX_VALID', 60.0))
+    TEMP_LOW_THRESHOLD = float(os.getenv('TEMP_LOW_THRESHOLD', 12.0))  # Zona congelamento
+    TEMP_HIGH_WARNING = float(os.getenv('TEMP_HIGH_WARNING', 20.0))  # Zona gialla
+    TEMP_HIGH_CRITICAL = float(os.getenv('TEMP_HIGH_CRITICAL', 25.0))  # Zona rossa
+    TEMP_TREND_THRESHOLD = float(os.getenv('TEMP_TREND_THRESHOLD', 0.5))  # °C per trend significativo
+    
+    # Power (Watt)
+    POWER_MIN_VALID = float(os.getenv('POWER_MIN_VALID', 0.0))
+    POWER_MAX_VALID = float(os.getenv('POWER_MAX_VALID', 10000.0))
+    POWER_CRITICAL_THRESHOLD = float(os.getenv('POWER_CRITICAL_THRESHOLD', 500.0))  # Watt
+    
+    # Door
+    DOOR_LEFT_OPEN_SECONDS = int(os.getenv('DOOR_LEFT_OPEN_SECONDS', 120))  # 2 minuti
 
 
 class DatabaseConfig:
@@ -64,8 +120,12 @@ class DatabaseConfig:
     USER = Config.DB_USER
     PASSWORD = Config.DB_PASSWORD
     
-    POOL_NAME = "smart_fridge_pool"
-    POOL_SIZE = 5
+    POOL_NAME = os.getenv('DB_POOL_NAME', "smart_fridge_pool")
+    POOL_SIZE = int(os.getenv('DB_POOL_SIZE', 5))
+    CONNECTION_TIMEOUT = int(os.getenv('DB_CONNECTION_TIMEOUT', 10))
+    CHARSET = os.getenv('DB_CHARSET', 'utf8mb4')
+    AUTOCOMMIT = os.getenv('DB_AUTOCOMMIT', 'False').lower() == 'true'
+    RAISE_ON_WARNINGS = os.getenv('DB_RAISE_ON_WARNINGS', 'True').lower() == 'true'
     
     @classmethod
     def get_config(cls) -> dict:
@@ -76,9 +136,9 @@ class DatabaseConfig:
             'database': cls.DATABASE,
             'user': cls.USER,
             'password': cls.PASSWORD,
-            'charset': 'utf8mb4',
+            'charset': cls.CHARSET,
             'use_unicode': True,
-            'autocommit': False,
-            'raise_on_warnings': True,
-            'connection_timeout': 10
+            'autocommit': cls.AUTOCOMMIT,
+            'raise_on_warnings': cls.RAISE_ON_WARNINGS,
+            'connection_timeout': cls.CONNECTION_TIMEOUT
         }

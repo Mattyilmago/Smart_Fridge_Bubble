@@ -21,6 +21,7 @@ class ErrorCode(Enum):
     # Not found errors (404)
     USER_NOT_FOUND = ("Utente non trovato", 404)
     FRIDGE_NOT_FOUND = ("Frigo non trovato", 404)
+    NOT_FOUND = ("Risorsa non trovata", 404)
     
     # Validation errors (400)
     MISSING_PARAMETER = ("Parametro mancante", 400)
