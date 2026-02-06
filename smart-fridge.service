@@ -5,8 +5,8 @@ After=network.target graphical.target
 [Service]
 Type=simple
 User=pub
-WorkingDirectory=/home/pub/Desktop/Smart_Fridge_Bubble
-ExecStart=/bin/bash /home/pub/Desktop/Smart_Fridge_Bubble/run_app.sh
+WorkingDirectory=%h/Desktop/Smart_Fridge_Bubble
+ExecStart=/bin/bash %h/Desktop/Smart_Fridge_Bubble/run_app.sh
 Restart=on-failure
 RestartSec=5
 StandardOutput=journal

@@ -11,6 +11,7 @@ from utils.logger import get_logger
 from api.auth.routes import auth_bp
 from api.users.routes import users_bp
 from api.fridges.routes import fridges_bp
+from api.debug.routes import debug_bp
 
 # Logger
 logger = get_logger('main')
@@ -36,6 +37,7 @@ limiter.limit(f"{Config.RATE_LIMIT_IS_AUTHORIZED_PER_DAY} per day")(auth_bp.rout
 app.register_blueprint(auth_bp, url_prefix='/auth')
 app.register_blueprint(users_bp, url_prefix='/api/users')
 app.register_blueprint(fridges_bp, url_prefix='/api/fridges')
+app.register_blueprint(debug_bp, url_prefix='/api/debug')
 
 
 @app.route('/')

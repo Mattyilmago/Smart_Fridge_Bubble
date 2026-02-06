@@ -1,3 +1,30 @@
 __pycache__
 venv
 *.log
+
+# Environment files
+.env
+*.env
+!.env.example
+
+# Tokens and credentials
+fridge_token.json
+
+# Captured images
+captured_images/
+*.jpg
+*.png
+
+# Temporary files
+/tmp/
+*.tmp
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db

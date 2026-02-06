@@ -6,17 +6,18 @@ Gestisce connessioni e pool per MySQL
 import mysql.connector
 from mysql.connector import Error, pooling
 from contextlib import contextmanager
+from config import Config
 
 
 class DatabaseConfig:
     """Configurazione connessione database MySQL"""
     
-    # Configurazione server Aruba DA MODIFICARE
-    HOST = "31.11.38.14"
-    PORT = 3306
-    DATABASE = "Sql1905550_1"
-    USER = "Sql1905550"
-    PASSWORD = "2PiselliNeri!InGola?"
+    # Legge configurazione da .env tramite Config
+    HOST = Config.DB_HOST
+    PORT = Config.DB_PORT
+    DATABASE = Config.DB_NAME
+    USER = Config.DB_USER
+    PASSWORD = Config.DB_PASSWORD
     
     # Pool connessioni
     POOL_NAME = "smart_fridge_pool"

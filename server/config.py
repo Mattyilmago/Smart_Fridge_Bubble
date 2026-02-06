@@ -27,11 +27,12 @@ class Config:
     
     JWT_ALGORITHM = os.getenv('JWT_ALGORITHM', 'HS256')
     FRIDGE_TOKEN_EXPIRY_DAYS = int(os.getenv('FRIDGE_TOKEN_EXPIRY_DAYS', 30))
-    USER_TOKEN_EXPIRY_DAYS = int(os.getenv('FRIDGE_TOKEN_EXPIRY_DAYS', 30))
+    USER_TOKEN_EXPIRY_DAYS = int(os.getenv('USER_TOKEN_EXPIRY_DAYS', 30))
     RENEWAL_THRESHOLD_DAYS = int(os.getenv('RENEWAL_THRESHOLD_DAYS', 7))
     
     # Converti in timedelta per uso interno
     FRIDGE_TOKEN_EXPIRY = timedelta(days=FRIDGE_TOKEN_EXPIRY_DAYS)
+    USER_TOKEN_EXPIRY = timedelta(days=USER_TOKEN_EXPIRY_DAYS)
     RENEWAL_THRESHOLD = timedelta(days=RENEWAL_THRESHOLD_DAYS)
     
     # Database
@@ -137,7 +138,7 @@ class DatabaseConfig:
             'user': cls.USER,
             'password': cls.PASSWORD,
             'charset': cls.CHARSET,
-            'use_unicode': True,
+            'use_unicode': True,                
             'autocommit': cls.AUTOCOMMIT,
             'raise_on_warnings': cls.RAISE_ON_WARNINGS,
             'connection_timeout': cls.CONNECTION_TIMEOUT

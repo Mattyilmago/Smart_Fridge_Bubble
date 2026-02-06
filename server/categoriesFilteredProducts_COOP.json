@@ -1,0 +1,749 @@
+{
+    "Frutta e Verdura": [
+        {
+            "name": "Agrumi",
+            "id": 19162,
+            "uid": "MTkxNjI="
+        },
+        {
+            "name": "Mele",
+            "id": 19168,
+            "uid": "MTkxNjg="
+        },
+        {
+            "name": "Fragole e frutti di bosco",
+            "id": 19166,
+            "uid": "MTkxNjY="
+        },
+        {
+            "name": "Banane e frutta esotica",
+            "id": 19164,
+            "uid": "MTkxNjQ="
+        },
+        {
+            "name": "Uva e kiwi",
+            "id": 19170,
+            "uid": "MTkxNzA="
+        },
+        {
+            "name": "Pere",
+            "id": 19169,
+            "uid": "MTkxNjk="
+        },
+        {
+            "name": "Frutta con nocciolo",
+            "id": 19167,
+            "uid": "MTkxNjc="
+        },
+        {
+            "name": "Cocomeri e meloni",
+            "id": 19165,
+            "uid": "MTkxNjU="
+        },
+        {
+            "name": "Altra frutta fresca",
+            "id": 19163,
+            "uid": "MTkxNjM="
+        },
+        {
+            "name": "Pomodori",
+            "id": 19187,
+            "uid": "MTkxODc="
+        },
+        {
+            "name": "Insalate, radicchi e verdure in foglia",
+            "id": 19184,
+            "uid": "MTkxODQ="
+        },
+        {
+            "name": "Ortaggi",
+            "id": 19185,
+            "uid": "MTkxODU="
+        },
+        {
+            "name": "Patate",
+            "id": 19186,
+            "uid": "MTkxODY="
+        },
+        {
+            "name": "Funghi",
+            "id": 19183,
+            "uid": "MTkxODM="
+        },
+        {
+            "name": "Altre verdure",
+            "id": 19182,
+            "uid": "MTkxODI="
+        },
+        {
+            "name": "Aglio, cipolla e aromi freschi",
+            "id": 19181,
+            "uid": "MTkxODE="
+        },
+        {
+            "name": "Insalate e verdure pronte",
+            "id": 19177,
+            "uid": "MTkxNzc="
+        },
+        {
+            "name": "Zuppe",
+            "id": 19178,
+            "uid": "MTkxNzg="
+        },
+        {
+            "name": "Legumi, cereali e mix per zuppe",
+            "id": 23436,
+            "uid": "MjM0MzY="
+        },
+        {
+            "name": "Pinoli e farine",
+            "id": 19160,
+            "uid": "MTkxNjA="
+        },
+        {
+            "name": "Altra frutta disidratata",
+            "id": 19159,
+            "uid": "MTkxNTk="
+        },
+        {
+            "name": "Frutta preparata e sciroppata",
+            "id": 19171,
+            "uid": "MTkxNzE="
+        },
+        {
+            "name": "Arachidi noci e pistacchi",
+            "id": 19173,
+            "uid": "MTkxNzM="
+        },
+        {
+            "name": "Mandorle e nocciole",
+            "id": 19174,
+            "uid": "MTkxNzQ="
+        },
+        {
+            "name": "Snack e altra frutta secca",
+            "id": 19175,
+            "uid": "MTkxNzU="
+        },
+        {
+            "name": "Frutta e verdura bio",
+            "id": 23702,
+            "uid": "MjM3MDI="
+        },
+        {
+            "name": "Mousse e frutta da bere",
+            "id": 24535,
+            "uid": "MjQ1MzU="
+        }
+    ],
+    "Pane e Pasticceria": [
+        {
+            "name": "Pane fresco",
+            "id": 19253,
+            "uid": "MTkyNTM="
+        },
+        {
+            "name": "Pane morbido e a fette",
+            "id": 23140,
+            "uid": "MjMxNDA="
+        },
+        {
+            "name": "Pane grattugiato",
+            "id": 19254,
+            "uid": "MTkyNTQ="
+        },
+        {
+            "name": "Crackers e schiacciatine",
+            "id": 19248,
+            "uid": "MTkyNDg="
+        },
+        {
+            "name": "Grissini e taralli",
+            "id": 19252,
+            "uid": "MTkyNTI="
+        },
+        {
+            "name": "Gallette e altri snack",
+            "id": 19251,
+            "uid": "MTkyNTE="
+        },
+        {
+            "name": "Piadine e tigelle",
+            "id": 19264,
+            "uid": "MTkyNjQ="
+        },
+        {
+            "name": "Crostini",
+            "id": 19249,
+            "uid": "MTkyNDk="
+        },
+        {
+            "name": "Pizze, focacce e tramezzini",
+            "id": 19265,
+            "uid": "MTkyNjU="
+        },
+        {
+            "name": "Pasticceria da forno",
+            "id": 19258,
+            "uid": "MTkyNTg="
+        },
+        {
+            "name": "Pasticceria fresca",
+            "id": 19259,
+            "uid": "MTkyNTk="
+        },
+        {
+            "name": "Brioches e paste fresche",
+            "id": 19257,
+            "uid": "MTkyNTc="
+        },
+        {
+            "name": "Mondo wafer",
+            "id": 19263,
+            "uid": "MTkyNjM="
+        },
+        {
+            "name": "Amaretti e savoiardi",
+            "id": 19261,
+            "uid": "MTkyNjE="
+        },
+        {
+            "name": "Biscotteria",
+            "id": 19262,
+            "uid": "MTkyNjI="
+        },
+        {
+            "name": "Snack e dessert da frigo",
+            "id": 19250,
+            "uid": "MTkyNTA="
+        }
+    ],
+    "Pasta fresca e piatti pronti": [
+        {
+            "name": "Gnocchi",
+            "id": 19268,
+            "uid": "MTkyNjg="
+        },
+        {
+            "name": "Pasta all'uovo",
+            "id": 19269,
+            "uid": "MTkyNjk="
+        },
+        {
+            "name": "Pasta di semola",
+            "id": 19270,
+            "uid": "MTkyNzA="
+        },
+        {
+            "name": "Pasta fresca ripiena",
+            "id": 19271,
+            "uid": "MTkyNzE="
+        },
+        {
+            "name": "Primi",
+            "id": 19275,
+            "uid": "MTkyNzU="
+        },
+        {
+            "name": "Secondi",
+            "id": 19277,
+            "uid": "MTkyNzc="
+        },
+        {
+            "name": "Contorni",
+            "id": 19273,
+            "uid": "MTkyNzM="
+        },
+        {
+            "name": "Insalate ed antipasti",
+            "id": 19274,
+            "uid": "MTkyNzQ="
+        },
+        {
+            "name": "Salse e creme spalmabili",
+            "id": 19276,
+            "uid": "MTkyNzY="
+        },
+        {
+            "name": "Primi",
+            "id": 23506,
+            "uid": "MjM1MDY="
+        },
+        {
+            "name": "Secondi",
+            "id": 23507,
+            "uid": "MjM1MDc="
+        },
+        {
+            "name": "Contorni e condimenti",
+            "id": 23508,
+            "uid": "MjM1MDg="
+        },
+        {
+            "name": "Altri",
+            "id": 23509,
+            "uid": "MjM1MDk="
+        },
+        {
+            "name": "Sushi e pok\u00e9",
+            "id": 23510,
+            "uid": "MjM1MTA="
+        },
+        {
+            "name": "Primi piatti",
+            "id": 24778,
+            "uid": "MjQ3Nzg="
+        },
+        {
+            "name": "Secondi piatti",
+            "id": 24779,
+            "uid": "MjQ3Nzk="
+        },
+        {
+            "name": "Contorni",
+            "id": 24780,
+            "uid": "MjQ3ODA="
+        },
+        {
+            "name": "Pronti in busta",
+            "id": 24820,
+            "uid": "MjQ4MjA="
+        }
+    ],
+    "Carne e Pesce": [
+        {
+            "name": "Bovino adulto",
+            "id": 18866,
+            "uid": "MTg4NjY="
+        },
+        {
+            "name": "Scottona e razze tipiche",
+            "id": 18867,
+            "uid": "MTg4Njc="
+        },
+        {
+            "name": "Vitello",
+            "id": 18882,
+            "uid": "MTg4ODI="
+        },
+        {
+            "name": "Coniglio",
+            "id": 18868,
+            "uid": "MTg4Njg="
+        },
+        {
+            "name": "Equino",
+            "id": 18869,
+            "uid": "MTg4Njk="
+        },
+        {
+            "name": "Ovino",
+            "id": 18872,
+            "uid": "MTg4NzI="
+        },
+        {
+            "name": "Galletti, quaglie e faraone",
+            "id": 18874,
+            "uid": "MTg4NzQ="
+        },
+        {
+            "name": "Pollo",
+            "id": 18875,
+            "uid": "MTg4NzU="
+        },
+        {
+            "name": "Tacchino",
+            "id": 18876,
+            "uid": "MTg4NzY="
+        },
+        {
+            "name": "Hamburger",
+            "id": 18870,
+            "uid": "MTg4NzA="
+        },
+        {
+            "name": "Macinati",
+            "id": 18871,
+            "uid": "MTg4NzE="
+        },
+        {
+            "name": "Pronti da cuocere",
+            "id": 18878,
+            "uid": "MTg4Nzg="
+        },
+        {
+            "name": "Pronti da grigliare",
+            "id": 18879,
+            "uid": "MTg4Nzk="
+        },
+        {
+            "name": "Pronti da gustare",
+            "id": 18880,
+            "uid": "MTg4ODA="
+        },
+        {
+            "name": "Suino",
+            "id": 18881,
+            "uid": "MTg4ODE="
+        },
+        {
+            "name": "Selvaggina",
+            "id": 24536,
+            "uid": "MjQ1MzY="
+        },
+        {
+            "name": "Intero",
+            "id": 18886,
+            "uid": "MTg4ODY="
+        },
+        {
+            "name": "Tranci e filetti",
+            "id": 18889,
+            "uid": "MTg4ODk="
+        },
+        {
+            "name": "Pronti da cuocere",
+            "id": 18888,
+            "uid": "MTg4ODg="
+        },
+        {
+            "name": "Molluschi e crostacei",
+            "id": 18887,
+            "uid": "MTg4ODc="
+        },
+        {
+            "name": "Cotto e crudo da condire",
+            "id": 18885,
+            "uid": "MTg4ODU="
+        },
+        {
+            "name": "Affumicato e altre specialit\u00e0",
+            "id": 18884,
+            "uid": "MTg4ODQ="
+        },
+        {
+            "name": "Sushi e pok\u00e8",
+            "id": 18890,
+            "uid": "MTg4OTA="
+        }
+    ],
+    "Salumi e Formaggi": [
+        {
+            "name": "Bresaola e Coppa",
+            "id": 19303,
+            "uid": "MTkzMDM="
+        },
+        {
+            "name": "Mortadella",
+            "id": 19304,
+            "uid": "MTkzMDQ="
+        },
+        {
+            "name": "Pancetta",
+            "id": 19305,
+            "uid": "MTkzMDU="
+        },
+        {
+            "name": "Prosciutto cotto",
+            "id": 19307,
+            "uid": "MTkzMDc="
+        },
+        {
+            "name": "Prosciutto crudo",
+            "id": 19308,
+            "uid": "MTkzMDg="
+        },
+        {
+            "name": "Salame",
+            "id": 19309,
+            "uid": "MTkzMDk="
+        },
+        {
+            "name": "Speck",
+            "id": 19311,
+            "uid": "MTkzMTE="
+        },
+        {
+            "name": "Wurstel",
+            "id": 19312,
+            "uid": "MTkzMTI="
+        },
+        {
+            "name": "Salumi a cubetti",
+            "id": 19310,
+            "uid": "MTkzMTA="
+        },
+        {
+            "name": "Precotti",
+            "id": 19306,
+            "uid": "MTkzMDY="
+        },
+        {
+            "name": "Altri salumi",
+            "id": 19302,
+            "uid": "MTkzMDI="
+        },
+        {
+            "name": "Mozzarelle e scamorze",
+            "id": 19300,
+            "uid": "MTkzMDA="
+        },
+        {
+            "name": "Formaggi a fette o fusi",
+            "id": 19281,
+            "uid": "MTkyODE="
+        },
+        {
+            "name": "Caprini",
+            "id": 19284,
+            "uid": "MTkyODQ="
+        },
+        {
+            "name": "Crescenze e stracchini",
+            "id": 19285,
+            "uid": "MTkyODU="
+        },
+        {
+            "name": "Mascarpone",
+            "id": 19286,
+            "uid": "MTkyODY="
+        },
+        {
+            "name": "Ricotta",
+            "id": 19287,
+            "uid": "MTkyODc="
+        },
+        {
+            "name": "Spalmabili",
+            "id": 19288,
+            "uid": "MTkyODg="
+        },
+        {
+            "name": "Altri formaggi freschi",
+            "id": 19283,
+            "uid": "MTkyODM="
+        },
+        {
+            "name": "Emmental e altri occhiati",
+            "id": 19290,
+            "uid": "MTkyOTA="
+        },
+        {
+            "name": "Gorgonzola e altri erborinati",
+            "id": 19291,
+            "uid": "MTkyOTE="
+        },
+        {
+            "name": "Pecorino",
+            "id": 19292,
+            "uid": "MTkyOTI="
+        },
+        {
+            "name": "Provola, scamorza e caciotte",
+            "id": 19293,
+            "uid": "MTkyOTM="
+        },
+        {
+            "name": "Taleggio, muffettati e altri stagionati",
+            "id": 19294,
+            "uid": "MTkyOTQ="
+        },
+        {
+            "name": "Grattugiati",
+            "id": 19299,
+            "uid": "MTkyOTk="
+        },
+        {
+            "name": "Parmigiano Reggiano",
+            "id": 19298,
+            "uid": "MTkyOTg="
+        },
+        {
+            "name": "Grana Padano",
+            "id": 19297,
+            "uid": "MTkyOTc="
+        },
+        {
+            "name": "Biologico e altri grana",
+            "id": 19296,
+            "uid": "MTkyOTY="
+        }
+    ],
+    "Latte, Latticini, Uova": [
+        {
+            "name": "Intero",
+            "id": 19207,
+            "uid": "MTkyMDc="
+        },
+        {
+            "name": "Scremato",
+            "id": 19209,
+            "uid": "MTkyMDk="
+        },
+        {
+            "name": "Parzialmente Scremato",
+            "id": 19208,
+            "uid": "MTkyMDg="
+        },
+        {
+            "name": "Alta qualit\u00e0",
+            "id": 19205,
+            "uid": "MTkyMDU="
+        },
+        {
+            "name": "Biologico e funzionale",
+            "id": 19206,
+            "uid": "MTkyMDY="
+        },
+        {
+            "name": "Intero",
+            "id": 19213,
+            "uid": "MTkyMTM="
+        },
+        {
+            "name": "Scremato",
+            "id": 19215,
+            "uid": "MTkyMTU="
+        },
+        {
+            "name": "Parzialmente Scremato",
+            "id": 19214,
+            "uid": "MTkyMTQ="
+        },
+        {
+            "name": "Arricchito",
+            "id": 19211,
+            "uid": "MTkyMTE="
+        },
+        {
+            "name": "Senza lattosio",
+            "id": 19216,
+            "uid": "MTkyMTY="
+        },
+        {
+            "name": "Biologico e funzionale",
+            "id": 19212,
+            "uid": "MTkyMTI="
+        },
+        {
+            "name": "Microfiltrato e alta pastorizzazione",
+            "id": 19217,
+            "uid": "MTkyMTc="
+        },
+        {
+            "name": "Besciamella",
+            "id": 19219,
+            "uid": "MTkyMTk="
+        },
+        {
+            "name": "Burro",
+            "id": 19220,
+            "uid": "MTkyMjA="
+        },
+        {
+            "name": "Margarina",
+            "id": 19221,
+            "uid": "MTkyMjE="
+        },
+        {
+            "name": "Panna",
+            "id": 19222,
+            "uid": "MTkyMjI="
+        },
+        {
+            "name": "Fresche",
+            "id": 19226,
+            "uid": "MTkyMjY="
+        },
+        {
+            "name": "Extra fresche",
+            "id": 19225,
+            "uid": "MTkyMjU="
+        },
+        {
+            "name": "Speciali e bio",
+            "id": 19227,
+            "uid": "MTkyMjc="
+        },
+        {
+            "name": "Derivati",
+            "id": 19224,
+            "uid": "MTkyMjQ="
+        },
+        {
+            "name": "Bianco",
+            "id": 19233,
+            "uid": "MTkyMzM="
+        },
+        {
+            "name": "Frutta e altri gusti",
+            "id": 19236,
+            "uid": "MTkyMzY="
+        },
+        {
+            "name": "Arricchiti",
+            "id": 19232,
+            "uid": "MTkyMzI="
+        },
+        {
+            "name": "Biologico e altri",
+            "id": 19234,
+            "uid": "MTkyMzQ="
+        },
+        {
+            "name": "Da bere",
+            "id": 19235,
+            "uid": "MTkyMzU="
+        },
+        {
+            "name": "Bianco",
+            "id": 19239,
+            "uid": "MTkyMzk="
+        },
+        {
+            "name": "Frutta e altri gusti",
+            "id": 19242,
+            "uid": "MTkyNDI="
+        },
+        {
+            "name": "Arricchiti",
+            "id": 19238,
+            "uid": "MTkyMzg="
+        },
+        {
+            "name": "Biologico e altri",
+            "id": 19240,
+            "uid": "MTkyNDA="
+        },
+        {
+            "name": "Da bere",
+            "id": 19241,
+            "uid": "MTkyNDE="
+        },
+        {
+            "name": "Probiotico da bere",
+            "id": 19244,
+            "uid": "MTkyNDQ="
+        },
+        {
+            "name": "Probiotico",
+            "id": 19245,
+            "uid": "MTkyNDU="
+        },
+        {
+            "name": "Senza lattosio, soia e altri",
+            "id": 19246,
+            "uid": "MTkyNDY="
+        },
+        {
+            "name": "Greco",
+            "id": 19230,
+            "uid": "MTkyMzA="
+        },
+        {
+            "name": "Bimbi",
+            "id": 19229,
+            "uid": "MTkyMjk="
+        }
+    ]
+}

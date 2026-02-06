@@ -27,7 +27,7 @@ def generate_user_token(user_id: int) -> str:
     """
     payload = {
         'user_id': user_id,
-        'exp': datetime.utcnow() + Config.FRIDGE_TOKEN_EXPIRY,  # Stessa durata dei fridge token
+        'exp': datetime.utcnow() + Config.USER_TOKEN_EXPIRY,
         'iat': datetime.utcnow()
     }
     

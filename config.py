@@ -1,3 +1,15 @@
+"""
+Smart Fridge - Configurazione Centralizzata
+Tutte le costanti e configurazioni dell'applicazione sono qui.
+"""
+
+import os
+from pathlib import Path
+from dotenv import load_dotenv
+
+# Carica variabili da .env se esiste
+load_dotenv()
+
 # === CONFIGURAZIONI SENSORI ===
 POLLING_INTERVAL_MS = 1000  # Intervallo polling sensori in millisecondi
 
@@ -12,7 +24,8 @@ HISTORY_HOURS = 48  # Ore di storico da mantenere e visualizzare
 MAX_DATA_POINTS = int(HISTORY_HOURS * 3600 * 1000 / POLLING_INTERVAL_MS)
 
 # === CONFIGURAZIONI API SERVER ===
-API_BASE_URL = "http://localhost:5000"  # Da modificare con URL server reale (PLACEHOLDER)
+import os
+API_BASE_URL = os.getenv('API_BASE_URL', 'http://localhost:5000')  # URL del server backend
 
 # Token frigo salvato localmente
 FRIDGE_TOKEN_FILE = "fridge_token.json"

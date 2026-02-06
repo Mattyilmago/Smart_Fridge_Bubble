@@ -8,6 +8,7 @@ Questo permette di gestire richieste concorrenti da frigo diversi.
 from .connection import DatabaseConfig, DatabaseConnection
 from .fridge_db import FridgeDatabase
 from .user_db import UserDatabase
+from .debug_db import DebugDatabase
 
 # Backward compatibility
 DatabaseManager = FridgeDatabase
@@ -18,6 +19,7 @@ __all__ = [
     'DatabaseConnection', 
     'FridgeDatabase',
     'UserDatabase',
+    'DebugDatabase',
     # Backward compatibility
     'DatabaseManager',
     'AuthQueries'

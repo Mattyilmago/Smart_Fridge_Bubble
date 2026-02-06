@@ -2,7 +2,10 @@
 # Smart Fridge - Integrated Startup
 # Avvia daemon in background, poi UI in foreground
 
-cd /home/pub/Desktop/Smart_Fridge_Bubble
+# Ottieni la directory dello script
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd "$SCRIPT_DIR"
+
 source venv/bin/activate
 export DISPLAY=:0
 export PYTHONUNBUFFERED=1

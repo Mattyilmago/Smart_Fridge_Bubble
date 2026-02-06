@@ -7,6 +7,9 @@ PyQt6-Charts
 # Requests per API calls
 requests
 
+# Python dotenv per gestione variabili ambiente
+python-dotenv
+
 # === SENSOR DEPENDENCIES ===
 # Adafruit per sensore BMP280 (temperatura)
 adafruit-circuitpython-bmp280
@@ -29,3 +32,5 @@ Pillow
 # === DATABASE DEPENDENCIES ===
 # MySQL connector (pure Python, no compilation needed)
 mysql-connector-python
+
+mariadb-server

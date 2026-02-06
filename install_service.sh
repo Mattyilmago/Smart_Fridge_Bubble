@@ -3,8 +3,11 @@
 
 echo "Installazione del servizio Smart Fridge..."
 
+# Ottieni la directory corrente dello script
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 # Copia il file di servizio nella directory systemd
-sudo cp /home/pub/Desktop/Smart_Fridge_Bubble/smart-fridge.service /etc/systemd/system/
+sudo cp "$SCRIPT_DIR/smart-fridge.service" /etc/systemd/system/
 
 # Ricarica i daemon di systemd
 sudo systemctl daemon-reload
