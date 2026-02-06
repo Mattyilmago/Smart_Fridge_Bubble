@@ -11,17 +11,33 @@
             "uid": "MTkxNjg="
         },
         {
-            "name": "Fragole e frutti di bosco",
+            "name": "Fragole",
             "id": 19166,
             "uid": "MTkxNjY="
         },
         {
-            "name": "Banane e frutta esotica",
+            "name": "Frutti di bosco",
+            "id": 19166,
+            "uid": "MTkxNjY="
+        },
+        {
+            "name": "Banane",
+
             "id": 19164,
             "uid": "MTkxNjQ="
         },
         {
-            "name": "Uva e kiwi",
+            "name": "Frutta Esotica",
+            "id": 19164,
+            "uid": "MTkxNjQ="
+        },
+        {
+            "name": "Uva",
+            "id": 19170,
+            "uid": "MTkxNzA="
+        },
+        {
+            "name": "Kiwi",
             "id": 19170,
             "uid": "MTkxNzA="
         },
@@ -36,7 +52,12 @@
             "uid": "MTkxNjc="
         },
         {
-            "name": "Cocomeri e meloni",
+            "name": "Cocomeri",
+            "id": 19165,
+            "uid": "MTkxNjU="
+        },
+        {
+            "name": "Meloni",
             "id": 19165,
             "uid": "MTkxNjU="
         },
@@ -109,11 +130,6 @@
             "name": "Arricchiti",
             "id": 19232,
             "uid": "MTkyMzI="
-        },
-        {
-            "name": "Arricchiti",
-            "id": 19238,
-            "uid": "MTkyMzg="
         }
     ],
     "Verdura": [
@@ -272,16 +288,6 @@
             "uid": "MTkyNzA="
         },
         {
-            "name": "Primi",
-            "id": 19275,
-            "uid": "MTkyNzU="
-        },
-        {
-            "name": "Secondi",
-            "id": 19277,
-            "uid": "MTkyNzc="
-        },
-        {
             "name": "Contorni",
             "id": 19273,
             "uid": "MTkyNzM="
@@ -292,17 +298,7 @@
             "uid": "MTkyNzY="
         },
         {
-            "name": "Primi",
-            "id": 23506,
-            "uid": "MjM1MDY="
-        },
-        {
-            "name": "Secondi",
-            "id": 23507,
-            "uid": "MjM1MDc="
-        },
-        {
-            "name": "Contorni e condimenti",
+            "name": "Condimenti",
             "id": 23508,
             "uid": "MjM1MDg="
         },
@@ -322,19 +318,9 @@
             "uid": "MjQ3Nzk="
         },
         {
-            "name": "Contorni",
-            "id": 24780,
-            "uid": "MjQ3ODA="
-        },
-        {
             "name": "Pronti in busta",
             "id": 24820,
             "uid": "MjQ4MjA="
-        },
-        {
-            "name": "Sushi e pokè",
-            "id": 18890,
-            "uid": "MTg4OTA="
         }
     ],
     "Carne": [
@@ -416,11 +402,6 @@
     ],
     "Pesce": [
         {
-            "name": "Intero",
-            "id": 18886,
-            "uid": "MTg4ODY="
-        },
-        {
             "name": "Tranci e filetti",
             "id": 18889,
             "uid": "MTg4ODk="
@@ -441,19 +422,19 @@
             "uid": "MTg4ODQ="
         },
         {
-            "name": "Intero",
+            "name": "Pesce Intero",
             "id": 19207,
             "uid": "MTkyMDc="
-        },
-        {
-            "name": "Intero",
-            "id": 19213,
-            "uid": "MTkyMTM="
         }
     ],
     "Salumi": [
         {
-            "name": "Bresaola e Coppa",
+            "name": "Bresaola",
+            "id": 19303,
+            "uid": "MTkzMDM="
+        },
+        {
+            "name": "Coppa",
             "id": 19303,
             "uid": "MTkzMDM="
         },
@@ -510,7 +491,12 @@
     ],
     "Formaggi": [
         {
-            "name": "Mozzarelle e scamorze",
+            "name": "Mozzarelle",
+            "id": 19300,
+            "uid": "MTkzMDA="
+        },       
+        {
+            "name": "Scamorza",
             "id": 19300,
             "uid": "MTkzMDA="
         },
@@ -565,7 +551,7 @@
             "uid": "MTkyOTI="
         },
         {
-            "name": "Provola, scamorza e caciotte",
+            "name": "Provola e caciotte",
             "id": 19293,
             "uid": "MTkyOTM="
         },
@@ -612,7 +598,7 @@
             "uid": "MTkyMDU="
         },
         {
-            "name": "Biologico e funzionale",
+            "name": "Biologico",
             "id": 19206,
             "uid": "MTkyMDY="
         },
@@ -620,11 +606,6 @@
             "name": "Scremato",
             "id": 19215,
             "uid": "MTkyMTU="
-        },
-        {
-            "name": "Parzialmente Scremato",
-            "id": 19214,
-            "uid": "MTkyMTQ="
         },
         {
             "name": "Arricchito",
@@ -635,11 +616,6 @@
             "name": "Senza lattosio",
             "id": 19216,
             "uid": "MTkyMTY="
-        },
-        {
-            "name": "Biologico e funzionale",
-            "id": 19212,
-            "uid": "MTkyMTI="
         },
         {
             "name": "Microfiltrato e alta pastorizzazione",
@@ -677,7 +653,7 @@
             "uid": "MTkyMjU="
         },
         {
-            "name": "Speciali e bio",
+            "name": "Speciali",
             "id": 19227,
             "uid": "MTkyMjc="
         },
@@ -692,39 +668,9 @@
             "uid": "MTkyMzM="
         },
         {
-            "name": "Frutta e altri gusti",
-            "id": 19236,
-            "uid": "MTkyMzY="
-        },
-        {
-            "name": "Biologico e altri",
-            "id": 19234,
-            "uid": "MTkyMzQ="
-        },
-        {
             "name": "Da bere",
             "id": 19235,
             "uid": "MTkyMzU="
-        },
-        {
-            "name": "Bianco",
-            "id": 19239,
-            "uid": "MTkyMzk="
-        },
-        {
-            "name": "Frutta e altri gusti",
-            "id": 19242,
-            "uid": "MTkyNDI="
-        },
-        {
-            "name": "Biologico e altri",
-            "id": 19240,
-            "uid": "MTkyNDA="
-        },
-        {
-            "name": "Da bere",
-            "id": 19241,
-            "uid": "MTkyNDE="
         },
         {
             "name": "Probiotico da bere",
